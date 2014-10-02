@@ -1,0 +1,509 @@
+% \iffalse
+%
+% hamacro.dtx
+% LaTeXマクロ集(煮ても焼いてもかまいません)
+% hamano@cuspy.org
+%
+%<*driver>
+\ProvidesFile{hamacro.dtx}
+%</driver>
+%<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+%<package>\ProvidesPackage{hamacro}
+%<*package>
+    [2004/11/05 v1.0 .dtx skeleton file]
+%</package>
+%
+%<*driver>
+%\documentclass{ltxdoc}
+\documentclass[a4paper,12pt]{jsarticle}
+%\documentclass[a4paper,12pt]{jsbook}
+\usepackage{doc}
+\usepackage{hamacro}
+\usepackage{layout}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\setcounter{StandardModuleDepth}{1}
+
+%\changes{v1.0}{2004/11/05}{Initial version}
+\GetFileInfo{hamacro.dtx}
+\DoNotIndex{\newcommand,\newenvironment}
+
+\begin{document}
+  \DocInput{hamacro.dtx}
+  \PrintChanges
+  \PrintIndex
+\end{document}
+%</driver>
+
+\usepackage[T1]{fontenc}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{here}
+
+% 色定義
+\usepackage[dvipdfmx]{color}
+\usepackage[dvipdfmx]{xcolor}
+\definecolor{lightgray}{HTML}{D3D3D3}
+\definecolor{gainsboro}{HTML}{DCDCDC}
+\definecolor{azure}{HTML}{F0FFFF}
+\definecolor{darkblue}{HTML}{00008B}
+\definecolor{midnightblue}{HTML}{191970}
+\definecolor{lightskyblue}{HTML}{87CEFA}
+\definecolor{olivegreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{cadetblue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{brown}{cmyk}{0,0.81,1,0.60}
+
+\definecolor{lightgreen}{HTML}{90EE90}
+\definecolor{green}{HTML}{008000}
+\definecolor{darkgreen}{HTML}{006400}
+
+\usepackage[dvipdfm]{hyperref}
+\hypersetup{
+  setpagesize=false,
+  bookmarksnumbered=true,
+  colorlinks=true,
+  linkcolor=linkcolor,
+  citecolor=linkcolor,
+  filecolor=linkcolor,
+  urlcolor=linkcolor
+}
+
+
+% テーマ
+\colorlet{framerule}{gray}
+\colorlet{framebg}{gainsboro}
+\colorlet{linkcolor}{blue}
+
+%\colorlet{accentcolor}{green}
+%\colorlet{subcolor}{darkgreen}
+
+\colorlet{accentcolor}{lightskyblue}
+\colorlet{subcolor}{midnightblue}
+
+
+% jsclassesとgeometryパッケージは相性が悪い
+%\usepackage[a4paper,top=35mm, bottom=30mm, left=30mm, right=30mm]{geometry}
+\setlength{\oddsidemargin}{-1truein}
+\addtolength{\oddsidemargin}{0.11\paperwidth}
+\setlength{\evensidemargin}{-1truein}
+\addtolength{\evensidemargin}{0.11\paperwidth}
+\setlength{\marginparwidth}{0.10\paperwidth}
+\setlength{\marginparsep}{0.005\paperwidth}
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-0.22\paperwidth}
+
+\message{^^J}
+\message{***** Layout Info *****^^J}
+\message{\hoffset: \the\hoffset^^J}
+\message{\voffset: \the\voffset^^J}
+\message{\paperwidth: \the\paperwidth^^J}
+\message{\paperheight: \the\paperheight^^J}
+\message{\textwidth: \the\textwidth^^J}
+\message{\textheight: \the\textheight^^J}
+\message{\oddsidemargin: \the\oddsidemargin^^J}
+\message{\evensidemargin: \the\evensidemargin^^J}
+\message{\marginparwidth: \the\marginparwidth^^J}
+\message{\marginparsep: \the\marginparsep^^J}
+\message{***********************^^J}
+
+% default title formatting
+\def\@maketitle{
+  \newpage
+  \null
+  \begin{center}
+    {\LARGE \@title \par}
+  \end{center}
+  \begin{flushright}
+    {\large \@date \par}
+    {\large \@author \par}
+  \end{flushright}
+  \vspace{0.5in}
+}
+
+% chapter formatting
+\usepackage[Conny]{fncychap}
+\ChNameVar{\centering\Huge\sffamily\color{black}}
+\ChTitleAsIs
+\ChTitleVar{\centering\Huge\sffamily\color{black}}
+
+\renewcommand{\DOCH}{
+  \color{subcolor}
+  \mghrulefill{3\RW}\par\nobreak
+  \vskip -0.5\baselineskip
+  \mghrulefill{\RW}\par\nobreak
+  \CNV\FmN{\@chapapp}\space \CNoV\thechapter \postchaptername
+  \par\nobreak
+  \vskip -0.5\baselineskip
+}
+\renewcommand{\DOTI}[1]{
+  \color{subcolor}
+  \mghrulefill{\RW}\par\nobreak
+  \CTV\FmTi{#1}\par\nobreak
+  \vskip 60\p@
+}
+\renewcommand{\DOTIS}[1]{
+  \color{subcolor}
+  \mghrulefill{\RW}\par\nobreak
+  \CTV\FmTi{#1}\par\nobreak
+  \vskip 60\p@
+}
+
+% section formatting
+\usepackage[explicit]{titlesec}
+\titleformat{name=\section}[block]
+{\bfseries\LARGE}
+{\color{subcolor}{\thesection} \color{black}{#1}}
+{1em}{}
+[\titleline{\color{subcolor}\titlerule[1.5pt]}]
+
+\titleformat{name=\section,numberless}[block]
+{\bfseries\LARGE}
+{#1}
+{1em}{}
+[\titleline{\color{subcolor}\titlerule[1.5pt]}]
+
+% subsection formatting
+\usepackage{ulem}
+\titleformat{\subsection}[block]
+{\bfseries\Large\def\ULthickness{1.5pt}}
+{\color{subcolor}\uline{\thesubsection{} \color{black}{#1}}}{1em}{}
+
+% subsubsection formatting
+\usepackage{ulem}
+\titleformat{\subsubsection}[block]
+{\bfseries\large}
+{\color{subcolor}{\thesubsubsection} \color{black}{#1}}{10em}{}
+
+%\titleformat{\subsection}[hang]{\large\bfseries}{\thesubsection}{1zw}{}
+%            [{\titlerule}]
+
+
+
+% 修飾マクロ
+\let\origemph\emph
+\newcommand{\redemph}[1]
+           {\textcolor{red}{\underline{\origemph{\textcolor{black}{#1}}}}}
+
+\newcommand{\ulemph}[1]
+           {\textbf{\Underline{#1}}}
+
+\newcommand{\bouemph}[1]
+           {\origemph{\bou{#1}}}
+
+%\let\emph\bouemph
+
+% style for quote
+\usepackage{framed}
+\usepackage{anyfontsize}
+\newcommand{\bigquotemark}{
+  {\fontsize{32pt}{32pt}\selectfont \color{accentcolor} \textbf{``}}
+  \vskip -2.3em
+  \hskip 0.3zw
+}
+\renewenvironment{quote}{
+  \def\FrameCommand{
+    \fboxsep=\FrameSep
+    \fcolorbox{gray}{gainsboro}
+  }
+  \MakeFramed {\advance\hsize-\width \FrameRestore}
+  \parindent 0zw % quoteマークがインデント代わり
+  \vskip -.5em
+  \hskip -1zw
+  {\bigquotemark}
+}
+{
+  \smallskip
+  \endMakeFramed
+}
+
+%\let\origquote{\quote}
+%\let\quote{\myquote}
+
+% style for verbatim
+\usepackage{fancyvrb}
+
+\renewenvironment{verbatim}{
+  \VerbatimEnvironment
+  \def\FrameCommand{
+    \fboxsep=4truept
+    \fcolorbox{gray}{gainsboro}
+  }
+  \MakeFramed{\advance\hsize-\width \FrameRestore}
+  \tt\fontsize{10.5truept}{1.2em}
+  \begin{Verbatim}}
+{
+  \end{Verbatim}
+  \endMakeFramed
+}
+
+\newenvironment{verbatim60}{
+  \VerbatimEnvironment
+  \def\FrameCommand{
+    \fboxsep=4truept
+    \fcolorbox{gray}{gainsboro}
+  }
+  \MakeFramed{\advance\hsize-\width \FrameRestore}
+  \tt\fontsize{14truept}{1.5em}
+  \begin{Verbatim}}
+{
+  \end{Verbatim}
+  \endMakeFramed
+}
+
+\newenvironment{verbatim40}{
+  \VerbatimEnvironment
+  \def\FrameCommand{
+    \fboxsep=4truept
+    \fcolorbox{gray}{gainsboro}
+  }
+  \MakeFramed{\advance\hsize-\width \FrameRestore}
+  \tt\fontsize{21truept}{21truept}
+  \begin{Verbatim}}
+{
+  \end{Verbatim}
+  \endMakeFramed
+}
+
+% style for pandoc block
+\usepackage{mdframed}
+\newenvironment{Shaded}{\begin{mdframed}}{\end{mdframed}}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+
+% style for listings
+\usepackage{listings,jlisting}
+\AtBeginDocument{
+  \def\lstlistingname{}
+  \def\thelstlisting{}
+}
+
+%\captionsetup[lstlisting]{numberbychapter=false}
+
+% ハイフンをU+002D HYPHEN-MINUSのままで表示
+%\makeatletter
+%\lst@CCPutMacro\lst@ProcessOther {"2D}{\lst@ttfamily{-{}}{-{}}}
+%\@empty\z@\@empty
+%\makeatother
+
+% アスタリスクをU+002A ASTERISKのままで表示
+%\makeatletter
+%\lst@CCPutMacro\lst@ProcessOther {"2A}{\lst@ttfamily{*{}}{*{}}}
+%\@empty\z@\@empty
+%\makeatother
+
+% TODO: 一部のPDFリーダーで白い線が入ってしまう問題がある
+% http://tex.stackexchange.com/questions/196247/lstlisting-width-of-background-box
+
+\mdfsetup{
+  linewidth=1truept,
+  linecolor=gray,
+  innerleftmargin=0.5zw,
+  innerrightmargin=0.5zw,
+%  innertopmargin=0.5em,
+%  innerbottommargin=0.5em,
+  backgroundcolor=gainsboro
+}
+
+
+\BeforeBeginEnvironment{lstlisting}{
+  \begin{mdframed}
+}
+
+\AfterEndEnvironment{lstlisting}{
+  \end{mdframed}
+}
+
+\lstset{
+  frame=single,
+  rulecolor=\color{gainsboro},
+  backgroundcolor=\color{gainsboro},
+%  numbers=left,
+%  numbersep=0pt,
+  framesep=0pt,
+  xleftmargin=0pt,
+  basicstyle=\fontsize{10.5truept}{1.2em}\tt,
+%  aboveskip=-0.1em,
+  belowskip=-0.5em,
+  identifierstyle=\color{black},
+  commentstyle=\color{brown},
+  keywordstyle=\color{olivegreen},
+  ndkeywordstyle=\color{red},
+  stringstyle=\color{purple},
+  showstringspaces=false,
+  breaklines=true,
+  columns=[l]{fullflexible}
+}
+
+\lstdefinestyle{command}{
+  language=bash,
+  commentstyle=\color{black}
+}
+
+\lstdefinelanguage{httpd.conf}
+{
+  morekeywords={VirtualHost, Include, Directory, LogFormat, CustomLog},
+  morecomment=[l]{\#}
+}
+
+% \fi
+%
+% \iffalse
+%<*doc>
+% \fi
+
+\title{\LaTeX{} hamacro パッケージ}
+\author{hamano}
+\maketitle
+\tableofcontents
+\clearpage
+%\MakeShortVerb{\|}
+
+\section{はじめに}
+
+これは私が本や文書を組版する際に利用する\LaTeX{}のスタイルパッケージで
+す。
+
+80文字ピッタリおさまるverbatim環境や、各種プログラミング言語のコードハ
+イライティングなど、主にプログラミングに関する文書に適しています。
+
+既存の\LaTeX{}文書で簡単に利用できることと、pandocやRe:Viewが出力する
+\LaTeX{}で利用することを想定していますので、新しいマクロを定義するとい
+うよりも既存のマクロや環境を書き換えています。
+
+このパッケージはApacheライセンス2.0で配布していますので、利用、改変、部
+分的なコピーなど自由です!
+
+\section{使い方}
+
+hamacro.styを然るべき場所に配置し、プリアンブルに
+
+\begin{lstlisting}[language=tex]
+\usepackage{hamacro}
+\end{lstlisting}
+
+と記述するだけでこのドキュメントの様なスタイルで組版できます。
+
+具体的な用例はexample.texやhamacro.dtxを参照して下さい。
+
+\subsection{pandocでの利用方法}
+\subsection{Re:Viewでの利用方法}
+
+\section{用例}
+\subsection{文字修飾}
+
+emphによる\emph{強調}
+
+textbfによる\textbf{強調}
+
+\subsection{quote環境}
+
+\begin{quote}
+吾輩は猫である。名前はまだ無い。
+
+どこで生れたかとんと見当がつかぬ。
+\end{quote}
+
+\subsection{verbatim環境}
+
+半角80文字がちょうど収まるサイズにしています。
+ソースコードやコマンドラインの提示にはverbatim環境よりもlistingsを推奨します
+
+\#include
+
+\begin{verbatim}
+-@*#include
+01234567890123456789012345678901234567890123456789012345678901234567890123456789
+０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９
+\end{verbatim}
+
+フォントが小さくなって嫌だ、という方のために60文字がちょうど収まるverbatim60とverbatim40を用意しています。
+
+\subsection{verbatim60}
+
+\begin{verbatim60}
+012345678901234567890123456789012345678901234567890123456789
+０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９
+\end{verbatim60}
+
+\subsection{verbatim40}
+
+\begin{verbatim40}
+0123456789012345678901234567890123456789
+０１２３４５６７８９０１２３４５６７８９
+\end{verbatim40}
+
+\section{コードリスティング}
+
+\subsection{C}
+
+\begin{lstlisting}[language=C]
+#include <stdio.h>
+
+int main(int argc, char *argv[]){
+    printf("Hello World!");
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{bash}
+
+\begin{lstlisting}[style=command]
+# uname --machine
+x86_64
+\end{lstlisting}
+
+\begin{lstlisting}[style=command, caption=コマンドライン]
+$ gcc -o hello hello.c
+\end{lstlisting}
+
+\subsection{80文字テスト}
+\begin{lstlisting}
+01234567890123456789012345678901234567890123456789012345678901234567890123456789
+\end{lstlisting}
+
+
+\includegraphics{latex.png}
+
+\section{レイアウト}
+
+\layout
+
+% \iffalse
+%</doc>
+% \fi
+%
+% \Finale
+\endinput
+%
+% \CheckSum{0}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+%
