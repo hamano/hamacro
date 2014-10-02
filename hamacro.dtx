@@ -18,7 +18,7 @@
 \documentclass[a4paper,12pt]{jsarticle}
 %\documentclass[a4paper,12pt]{jsbook}
 \usepackage{doc}
-\usepackage{hamacro}
+\usepackage[blue]{hamacro}
 \usepackage{layout}
 \EnableCrossrefs
 \CodelineIndex
@@ -69,17 +69,23 @@
 }
 
 
-% テーマ
+% カラーテーマ設定
 \colorlet{framerule}{gray}
 \colorlet{framebg}{gainsboro}
 \colorlet{linkcolor}{blue}
 
-%\colorlet{accentcolor}{green}
-%\colorlet{subcolor}{darkgreen}
+\colorlet{accentcolor}{black}
+\colorlet{subcolor}{black}
 
-\colorlet{accentcolor}{lightskyblue}
-\colorlet{subcolor}{midnightblue}
-
+\DeclareOption{green}{
+  \colorlet{accentcolor}{green}
+  \colorlet{subcolor}{darkgreen}
+}
+\DeclareOption{blue}{
+  \colorlet{accentcolor}{lightskyblue}
+  \colorlet{subcolor}{midnightblue}
+}
+\ProcessOptions
 
 % jsclassesとgeometryパッケージは相性が悪い
 %\usepackage[a4paper,top=35mm, bottom=30mm, left=30mm, right=30mm]{geometry}
@@ -284,6 +290,7 @@
 \newcommand{\NormalTok}[1]{{#1}}
 
 % style for listings
+\usepackage{upquote}
 \usepackage{listings,jlisting}
 \AtBeginDocument{
   \def\lstlistingname{}
@@ -356,6 +363,16 @@
 {
   morekeywords={VirtualHost, Include, Directory, LogFormat, CustomLog},
   morecomment=[l]{\#}
+}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]\"
 }
 
 % \fi
@@ -448,7 +465,6 @@ textbfによる\textbf{強調}
 \section{コードリスティング}
 
 \subsection{C}
-
 \begin{lstlisting}[language=C]
 #include <stdio.h>
 
@@ -456,6 +472,15 @@ int main(int argc, char *argv[]){
     printf("Hello World!");
     return 0;
 }
+\end{lstlisting}
+
+\subsection{Python}
+\begin{lstlisting}[language=python]
+def hello():
+    print('Hello World!')
+
+if __name__ == '__main__':
+    hello()
 \end{lstlisting}
 
 \subsection{bash}
