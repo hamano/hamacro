@@ -1,3 +1,3 @@
 # hamacro.sty
 
-see [hamacro.pdf](hamacro.pdf)
+see [hamacro.pdf](https://github.com/hamano/hamacro/blob/master/hamacro.pdf?raw=true)
