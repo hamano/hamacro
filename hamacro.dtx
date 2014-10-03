@@ -1,7 +1,7 @@
 % \iffalse
 %
 % hamacro.dtx
-% LaTeXマクロ集(煮ても焼いてもかまいません)
+% 俺のLaTeXマクロ集(煮ても焼いてもかまいません)
 % hamano@cuspy.org
 %
 %<*driver>
@@ -67,7 +67,6 @@
   filecolor=linkcolor,
   urlcolor=linkcolor
 }
-
 
 % カラーテーマ設定
 \colorlet{framerule}{gray}
@@ -172,7 +171,8 @@
 \usepackage{ulem}
 \titleformat{\subsection}[block]
 {\bfseries\Large\def\ULthickness{1.5pt}}
-{\color{subcolor}\uline{\thesubsection{} \color{black}{#1}}}{1em}{}
+{\uline{\color{subcolor}\thesubsection{} \color{black}{#1}}}
+{1em}{}
 
 % subsubsection formatting
 \usepackage{ulem}
@@ -182,7 +182,6 @@
 
 %\titleformat{\subsection}[hang]{\large\bfseries}{\thesubsection}{1zw}{}
 %            [{\titlerule}]
-
 
 
 % 修飾マクロ
@@ -324,7 +323,6 @@
   backgroundcolor=gainsboro
 }
 
-
 \BeforeBeginEnvironment{lstlisting}{
   \begin{mdframed}
 }
@@ -355,8 +353,14 @@
 }
 
 \lstdefinestyle{command}{
-  language=bash,
+  language=command,
   commentstyle=\color{black}
+}
+
+\lstdefinelanguage{command}
+{
+  morekeywords={\$},
+  otherkeywords={\#, \%}
 }
 
 \lstdefinelanguage{httpd.conf}
@@ -464,6 +468,12 @@ textbfによる\textbf{強調}
 
 \section{コードリスティング}
 
+\subsection{コマンドライン}
+\begin{lstlisting}[language=command]
+# uname --machine
+x86_64
+\end{lstlisting}
+
 \subsection{C}
 \begin{lstlisting}[language=C]
 #include <stdio.h>
@@ -483,22 +493,10 @@ if __name__ == '__main__':
     hello()
 \end{lstlisting}
 
-\subsection{bash}
-
-\begin{lstlisting}[style=command]
-# uname --machine
-x86_64
-\end{lstlisting}
-
-\begin{lstlisting}[style=command, caption=コマンドライン]
-$ gcc -o hello hello.c
-\end{lstlisting}
-
 \subsection{80文字テスト}
 \begin{lstlisting}
 01234567890123456789012345678901234567890123456789012345678901234567890123456789
 \end{lstlisting}
-
 
 \includegraphics{latex.png}
 
