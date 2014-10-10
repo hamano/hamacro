@@ -38,7 +38,6 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[dvipdfmx]{graphicx}
-\usepackage{here}
 
 % 色定義
 \usepackage[dvipdfmx]{color}
@@ -67,6 +66,12 @@
   filecolor=linkcolor,
   urlcolor=linkcolor
 }
+
+% その他パッケージ
+\usepackage{here}
+\usepackage{ctable}
+\usepackage{longtable}
+
 
 % カラーテーマ設定
 \colorlet{framerule}{gray}
@@ -171,7 +176,7 @@
 \usepackage{ulem}
 \titleformat{\subsection}[block]
 {\bfseries\Large\def\ULthickness{1.5pt}}
-{\uline{\color{subcolor}\thesubsection{} \color{black}{#1}}}
+{\color{subcolor}\uline{\thesubsection{} \color{black}{#1}}}
 {1em}{}
 
 % subsubsection formatting
@@ -425,9 +430,13 @@ hamacro.styを然るべき場所に配置し、プリアンブルに
 \section{用例}
 \subsection{文字修飾}
 
-emphによる\emph{強調}
-
-textbfによる\textbf{強調}
+\begin{itemize}
+\item 普通の文字(normal)
+\item \emph{強調(emph)}
+\item \textbf{強い強調(textbf)}
+\item \sout{打ち消し線}
+\item \textsuperscript{上付き}
+\end{itemize}
 
 \subsection{quote環境}
 
@@ -442,10 +451,7 @@ textbfによる\textbf{強調}
 半角80文字がちょうど収まるサイズにしています。
 ソースコードやコマンドラインの提示にはverbatim環境よりもlistingsを推奨します
 
-\#include
-
 \begin{verbatim}
--@*#include
 01234567890123456789012345678901234567890123456789012345678901234567890123456789
 ０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９
 \end{verbatim}
@@ -498,10 +504,48 @@ if __name__ == '__main__':
 01234567890123456789012345678901234567890123456789012345678901234567890123456789
 \end{lstlisting}
 
+
+\subsection{リスト}
+
+\subsection{列挙リスト}
+\begin{itemize}
+\item りんご
+\item みかん
+\item バナナ
+\end{itemize}
+
+\subsection{順序リスト}
+\begin{enumerate}
+\item 睦月
+\item 如月
+\item 弥生
+\end{enumerate}
+
+\subsection{定義リスト}
+\begin{description}
+\item[Monday] 月曜日
+\item[Tuesday] 火曜日
+\item[Wednesday] 水曜日
+\end{description}
+
+\section{テーブル}
+
+\begin{longtable}[c]{@{}crr@{}}
+\toprule\addlinespace
+果物 & 値段 & 個数
+\\\addlinespace
+\midrule\endhead
+バナナ & 134円 & 10本
+\\\addlinespace
+オレンジ & 210円 & 10個
+\\\addlinespace
+\bottomrule
+\end{longtable}
+
+\section{画像}
 \includegraphics{latex.png}
 
 \section{レイアウト}
-
 \layout
 
 % \iffalse
