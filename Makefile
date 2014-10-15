@@ -5,7 +5,7 @@ NAME=hamacro
 all: $(NAME).pdf
 
 clean:
-	rm -rf *.log *.dvi *.bbl *.blg *.idx *.glo *.out *.aux *.toc
+	rm -rf tex *.xbb
 
 $(NAME).sty: $(NAME).ins $(NAME).dtx
 	$(LATEX) $<
