@@ -20,7 +20,6 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[dvipdfmx]{graphicx}
-\usepackage{here}
 
 \usepackage[dvipdfmx]{color}
 \usepackage[dvipdfmx]{xcolor}
@@ -48,6 +47,12 @@
   filecolor=linkcolor,
   urlcolor=linkcolor
 }
+
+\usepackage{pxjahyper}
+
+\usepackage{here}
+\usepackage{ctable}
+\usepackage{longtable}
 
 \colorlet{framerule}{gray}
 \colorlet{framebg}{gainsboro}
@@ -145,7 +150,7 @@
 \usepackage{ulem}
 \titleformat{\subsection}[block]
 {\bfseries\Large\def\ULthickness{1.5pt}}
-{\uline{\color{subcolor}\thesubsection{} \color{black}{#1}}}
+{\color{subcolor}\uline{\thesubsection{} \color{black}{#1}}}
 {1em}{}
 
 \usepackage{ulem}
