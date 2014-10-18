@@ -21,29 +21,41 @@
 \tableofcontents
 \clearpage
 
-\section{修飾}
+\section{フォント}
+\subsection{書体}
+\begin{itemize}
+\item \textrm{ローマン体}
+\item \textsf{サンセリフ体}
+\item \texttt{タイプライター体}
+\item \textmd{デフォルト体}
+\item \textbf{ボールド}
+\item \textup{直立体}
+\item \textit{イタリック}
+\item \textsl{スラント}
+\item \textsc{スモールキャピタル}
+\end{itemize}
 
-formatting by \emph{emph}
+\subsection{修飾}
+\begin{itemize}
+\item \emph{emphによる強調}
+\end{itemize}
 
-formatting by \textbf{textbf}
-
-emphによる\emph{強調}
-
-textbfによる\textbf{強調}
+\def\sampletext{Windowsでコンピュータの世界が広がります。}
 
 \subsection{フォントサイズ}
-
-\tiny{あ tiny}\\
-\scriptsize{あ scriptsize}\\
-\footnotesize{あ footnotesize}\\
-\small{あ small}\\
-\normalsize{あ normalsize}\\
-\large{あ large}\\
-\Large{あ Large}\\
-\LARGE{あ LARGE}\\
-\huge{あ huge}\\
-\Huge{あ Huge}\\
-\normalsize{リセット}\\
+\begin{itemize}
+  \normalsize\item\tiny{\sampletext(tiny)}
+  \normalsize\item\scriptsize{\sampletext(scriptsize)}
+  \normalsize\item\footnotesize{\sampletext(footnotesize)}
+  \normalsize\item\small{\sampletext(small)}
+  \normalsize\item\normalsize{\sampletext(normalsize)}
+  \normalsize\item\large{\sampletext(large)}
+  \normalsize\item\Large{\sampletext(Large)}
+  \normalsize\item\LARGE{\sampletext(LARGE)}
+  \normalsize\item\huge{\sampletext(huge)}
+  \normalsize\item\Huge{\sampletext(Huge)}
+\end{itemize}
+\normalsize
 
 \subsection{リンク}
 \url{http://localhost/}
