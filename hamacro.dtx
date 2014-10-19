@@ -37,6 +37,7 @@
 %</driver>
 
 \usepackage[T1]{fontenc}
+%\usepackage[deluxe]{otf}
 \usepackage[dvipdfmx]{graphicx}
 
 % 色定義
@@ -429,123 +430,7 @@ hamacro.styを然るべき場所に配置し、プリアンブルに
 \subsection{pandocでの利用方法}
 \subsection{Re:Viewでの利用方法}
 
-\section{用例}
-\subsection{文字修飾}
-
-\begin{itemize}
-\item 普通の文字(normal)
-\item \emph{強調(emph)}
-\item \textbf{強い強調(textbf)}
-\item \sout{打ち消し線}
-\item \textsuperscript{上付き}
-\end{itemize}
-
-\subsection{quote環境}
-
-\begin{quote}
-吾輩は猫である。名前はまだ無い。
-
-どこで生れたかとんと見当がつかぬ。
-\end{quote}
-
-\subsection{verbatim環境}
-
-半角80文字がちょうど収まるサイズにしています。
-ソースコードやコマンドラインの提示にはverbatim環境よりもlistingsを推奨します
-
-\begin{verbatim}
-01234567890123456789012345678901234567890123456789012345678901234567890123456789
-０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９
-\end{verbatim}
-
-フォントが小さくなって嫌だ、という方のために60文字がちょうど収まるverbatim60とverbatim40を用意しています。
-
-\subsection{verbatim60}
-
-\begin{verbatim60}
-012345678901234567890123456789012345678901234567890123456789
-０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９
-\end{verbatim60}
-
-\subsection{verbatim40}
-
-\begin{verbatim40}
-0123456789012345678901234567890123456789
-０１２３４５６７８９０１２３４５６７８９
-\end{verbatim40}
-
-\section{コードリスティング}
-
-\subsection{コマンドライン}
-\begin{lstlisting}[language=command]
-# uname --machine
-x86_64
-\end{lstlisting}
-
-\subsection{C}
-\begin{lstlisting}[language=C]
-#include <stdio.h>
-
-int main(int argc, char *argv[]){
-    printf("Hello World!");
-    return 0;
-}
-\end{lstlisting}
-
-\subsection{Python}
-\begin{lstlisting}[language=python]
-def hello():
-    print('Hello World!')
-
-if __name__ == '__main__':
-    hello()
-\end{lstlisting}
-
-\subsection{80文字テスト}
-\begin{lstlisting}
-01234567890123456789012345678901234567890123456789012345678901234567890123456789
-\end{lstlisting}
-
-
-\subsection{リスト}
-
-\subsection{列挙リスト}
-\begin{itemize}
-\item りんご
-\item みかん
-\item バナナ
-\end{itemize}
-
-\subsection{順序リスト}
-\begin{enumerate}
-\item 睦月
-\item 如月
-\item 弥生
-\end{enumerate}
-
-\subsection{定義リスト}
-\begin{description}
-\item[Monday] 月曜日
-\item[Tuesday] 火曜日
-\item[Wednesday] 水曜日
-\end{description}
-
-\section{テーブル}
-
-\begin{longtable}[c]{@{}crr@{}}
-\toprule\addlinespace
-果物 & 値段 & 個数
-\\\addlinespace
-\midrule\endhead
-バナナ & 134円 & 10本
-\\\addlinespace
-オレンジ & 210円 & 10個
-\\\addlinespace
-\bottomrule
-\end{longtable}
-
-\section{画像}
-\includegraphics[width=\textwidth]{latex.eps}
+\input{example.tex}
 
 \section{レイアウト}
 \layout
