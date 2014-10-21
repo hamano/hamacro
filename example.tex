@@ -1,13 +1,48 @@
 \section{用例}
 \subsection{フォント}
 
+\subsubsection{文字修飾}
 \begin{itemize}
 \item 普通の文字(normal)
 \item \emph{強調(emph)}
-\item \textbf{強い強調(textbf)}
 \item \sout{打ち消し線}
 \item \textsuperscript{上付き}
 \end{itemize}
+
+\subsubsection{書体}
+
+\begin{itemize}
+\item \textrm{ローマン体}
+\item \textsf{サンセリフ体}
+\item \texttt{タイプライター体}
+\item \textmd{デフォルト体}
+\item \textbf{ボールド}
+\item \textup{直立体}
+\item \textit{イタリック}
+\item \textsl{スラント}
+\item \textsc{スモールキャピタル}
+\end{itemize}
+
+\subsubsection{フォントサイズ}
+\def\sampletext{Windowsでコンピュータの世界が広がります。}
+\begin{itemize}
+  \normalsize\item\tiny{\sampletext(tiny)}
+  \normalsize\item\scriptsize{\sampletext(scriptsize)}
+  \normalsize\item\footnotesize{\sampletext(footnotesize)}
+  \normalsize\item\small{\sampletext(small)}
+  \normalsize\item\normalsize{\sampletext(normalsize)}
+  \normalsize\item\large{\sampletext(large)}
+  \normalsize\item\Large{\sampletext(Large)}
+  \normalsize\item\LARGE{\sampletext(LARGE)}
+  \normalsize\item\huge{\sampletext(huge)}
+  \normalsize\item\Huge{\sampletext(Huge)}
+\end{itemize}
+\normalsize
+
+\subsection{リンク}
+\url{http://localhost/}
+
+\href{http://www.example.com/}{example.com}
 
 \subsection{quote環境}
 
@@ -16,6 +51,14 @@
 
 どこで生れたかとんと見当がつかぬ。
 \end{quote}
+
+\subsection{quotation環境}
+
+\begin{quotation}
+吾輩は猫である。名前はまだ無い。
+
+どこで生れたかとんと見当がつかぬ。
+\end{quotation}
 
 \subsection{verbatim環境}
 
@@ -43,15 +86,15 @@
 ０１２３４５６７８９０１２３４５６７８９
 \end{verbatim40}
 
-\section{コードリスティング}
+\subsection{コードリスティング}
 
-\subsection{コマンドライン}
+\subsubsection{コマンドライン}
 \begin{lstlisting}[language=command]
 # uname --machine
 x86_64
 \end{lstlisting}
 
-\subsection{C}
+\subsubsection{C}
 \begin{lstlisting}[language=C]
 #include <stdio.h>
 
@@ -61,7 +104,7 @@ int main(int argc, char *argv[]){
 }
 \end{lstlisting}
 
-\subsection{Python}
+\subsubsection{Python}
 \begin{lstlisting}[language=python]
 def hello():
     print('Hello World!')
@@ -70,29 +113,28 @@ if __name__ == '__main__':
     hello()
 \end{lstlisting}
 
-\subsection{80文字テスト}
+\subsubsection{80文字テスト}
 \begin{lstlisting}
 01234567890123456789012345678901234567890123456789012345678901234567890123456789
 \end{lstlisting}
 
-
 \subsection{リスト}
 
-\subsection{列挙リスト}
+\subsubsection{列挙リスト}
 \begin{itemize}
 \item りんご
 \item みかん
 \item バナナ
 \end{itemize}
 
-\subsection{順序リスト}
+\subsubsection{順序リスト}
 \begin{enumerate}
 \item 睦月
 \item 如月
 \item 弥生
 \end{enumerate}
 
-\subsection{定義リスト}
+\subsubsection{定義リスト}
 \begin{description}
 \item[Monday] 月曜日
 \item[Tuesday] 火曜日
@@ -101,6 +143,20 @@ if __name__ == '__main__':
 
 \subsection{テーブル}
 
+\subsubsection{普通のテーブル}
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|c|r|}
+\hline
+セル1 & セル2 & セル3 \\ \hline
+セル4 & セル5 & セル6 \\ \hline
+セル7 & セル8 & セル9 \\ \hline
+\end{tabular}
+\caption{キャプション}
+\end{center}
+\end{table}
+
+\subsubsection{longtable}
 \begin{longtable}[c]{@{}crr@{}}
 \toprule\addlinespace
 果物 & 値段 & 個数
@@ -113,5 +169,34 @@ if __name__ == '__main__':
 \bottomrule
 \end{longtable}
 
+\subsection{水平線}
+\begin{center}\rule{3in}{0.4pt}\end{center}
+
 \subsection{画像}
 \includegraphics[width=\textwidth]{latex.eps}
+
+\clearpage
+\subsection{数式}
+\begin{enumerate}
+
+\item 質量とエネルギーの等価性
+\begin{equation}
+E = mc ^2
+\end{equation}
+
+\item 波動方程式
+\begin{equation}
+\frac{\partial^2 z}{\partial t^2}=
+c^2 (\frac{\partial^2 z}{\partial x^2}+\frac{\partial^2 z}{\partial y^2})-
+\mu \frac{\partial z}{\partial t}
+\end{equation}
+
+\begin{equation}
+\sum_{x=1}^4 x^2 = 30
+\end{equation}
+
+\item オイラーの公式
+
+文章中の $e^{i\theta}=\cos\theta+i\sin\theta$ オイラーの公式。
+
+\end{enumerate}
