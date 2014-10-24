@@ -37,7 +37,7 @@
 %</driver>
 
 \usepackage[T1]{fontenc}
-%\usepackage[deluxe]{otf}
+\usepackage[deluxe]{otf}
 \usepackage[dvipdfmx]{graphicx}
 
 % 色定義
@@ -164,13 +164,13 @@
 % section formatting
 \usepackage[explicit]{titlesec}
 \titleformat{name=\section}[block]
-{\bfseries\LARGE}
+{\gtfamily\bfseries\LARGE}
 {\color{subcolor}{\thesection} \color{black}{#1}}
 {1em}{}
 [\titleline{\color{subcolor}\titlerule[1.5pt]}]
 
 \titleformat{name=\section,numberless}[block]
-{\bfseries\LARGE}
+{\gtfamily\bfseries\LARGE}
 {#1}
 {1em}{}
 [\titleline{\color{subcolor}\titlerule[1.5pt]}]
@@ -178,14 +178,14 @@
 % subsection formatting
 \usepackage{ulem}
 \titleformat{\subsection}[block]
-{\bfseries\Large\def\ULthickness{1.5pt}}
+{\gtfamily\bfseries\Large\def\ULthickness{1.5pt}}
 {\color{subcolor}\uline{\thesubsection{} \color{black}{#1}}}
 {1em}{}
 
 % subsubsection formatting
 \usepackage{ulem}
 \titleformat{\subsubsection}[block]
-{\bfseries\large}
+{\gtfamily\bfseries\large}
 {\color{subcolor}{\thesubsubsection} \color{black}{#1}}{10em}{}
 
 %\titleformat{\subsection}[hang]{\large\bfseries}{\thesubsection}{1zw}{}
