@@ -19,6 +19,7 @@
     [2004/11/05 v1.0 .dtx skeleton file]
 
 \usepackage[T1]{fontenc}
+\usepackage[deluxe]{otf}
 \usepackage[dvipdfmx]{graphicx}
 
 \usepackage[dvipdfmx]{color}
@@ -136,26 +137,26 @@
 
 \usepackage[explicit]{titlesec}
 \titleformat{name=\section}[block]
-{\bfseries\LARGE}
+{\gtfamily\bfseries\LARGE}
 {\color{subcolor}{\thesection} \color{black}{#1}}
 {1em}{}
 [\titleline{\color{subcolor}\titlerule[1.5pt]}]
 
 \titleformat{name=\section,numberless}[block]
-{\bfseries\LARGE}
+{\gtfamily\bfseries\LARGE}
 {#1}
 {1em}{}
 [\titleline{\color{subcolor}\titlerule[1.5pt]}]
 
 \usepackage{ulem}
 \titleformat{\subsection}[block]
-{\bfseries\Large\def\ULthickness{1.5pt}}
+{\gtfamily\bfseries\Large\def\ULthickness{1.5pt}}
 {\color{subcolor}\uline{\thesubsection{} \color{black}{#1}}}
 {1em}{}
 
 \usepackage{ulem}
 \titleformat{\subsubsection}[block]
-{\bfseries\large}
+{\gtfamily\bfseries\large}
 {\color{subcolor}{\thesubsubsection} \color{black}{#1}}{10em}{}
 
 
