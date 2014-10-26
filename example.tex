@@ -1,26 +1,41 @@
 \section{用例}
 \subsection{フォント}
 
+\subsubsection{deluxeフォント}
+\begin{itemize}
+  \item {\mcfamily 明朝体(ヒラギノ明朝W3)}
+  \item {\mcfamily\bfseries 明朝太字(ヒラギノ明朝W6)}
+  \item {\gtfamily ゴシック(ヒラギノ角ゴW3)}
+  \item {\gtfamily\bfseries ゴシック太字(ヒラギノ角ゴW6)}
+  \item {\gtfamily\ebseries ゴシック極太(ヒラギノ角ゴW8)}
+  \item {\mgfamily 丸文字(ヒラギノ丸ゴW4)}
+  \item {\mcfamily\ltseries 明朝細字(ヒラギノ明朝W2)}
+\end{itemize}
+
+\subsubsection{書体}
+\begin{itemize}
+  \item ファミリー
+  \begin{itemize}
+    \item \textrm{ローマン体}
+    \item \textsf{サンセリフ体}
+    \item \texttt{タイプライター体}
+    \item \textmc{明朝体}
+    \item \textgt{ゴシック}
+  \end{itemize}
+
+  \item シリーズ
+  \begin{itemize}
+    \item \textmd{ミディアム}
+    \item \textbf{ボールド}
+  \end{itemize}
+\end{itemize}
+
 \subsubsection{文字修飾}
 \begin{itemize}
 \item 普通の文字(normal)
 \item \emph{強調(emph)}
 \item \sout{打ち消し線}
 \item \textsuperscript{上付き}
-\end{itemize}
-
-\subsubsection{書体}
-
-\begin{itemize}
-\item \textrm{ローマン体}
-\item \textsf{サンセリフ体}
-\item \texttt{タイプライター体}
-\item \textmd{デフォルト体}
-\item \textbf{ボールド}
-\item \textup{直立体}
-\item \textit{イタリック}
-\item \textsl{スラント}
-\item \textsc{スモールキャピタル}
 \end{itemize}
 
 \subsubsection{フォントサイズ}
@@ -179,6 +194,11 @@ if __name__ == '__main__':
 \subsection{数式}
 \begin{enumerate}
 
+\item 総和
+\begin{equation}
+\sum_{i=1}^n i = \frac{n(n+1)}{2}
+\end{equation}
+
 \item 質量とエネルギーの等価性
 \begin{equation}
 E = mc ^2
@@ -191,12 +211,6 @@ c^2 (\frac{\partial^2 z}{\partial x^2}+\frac{\partial^2 z}{\partial y^2})-
 \mu \frac{\partial z}{\partial t}
 \end{equation}
 
-\begin{equation}
-\sum_{x=1}^4 x^2 = 30
-\end{equation}
-
-\item オイラーの公式
-
-文章中の $e^{i\theta}=\cos\theta+i\sin\theta$ オイラーの公式。
+\item 文章中に突然の $e^{i\theta}=\cos\theta+i\sin\theta$ オイラーの公式
 
 \end{enumerate}
