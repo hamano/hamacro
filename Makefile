@@ -2,7 +2,7 @@ LATEX=platex
 #LATEX=uplatex
 LATEX_OPT=-shell-escape -output-directory=tex
 DVIPDFMX=dvipdfmx
-#DVIPDFMX_OPT=-f ptex-hiragino
+DVIPDFMX_OPT=-f otf-hiragino
 NAME=hamacro
 
 all: $(NAME).pdf
@@ -13,7 +13,7 @@ clean:
 $(NAME).sty: $(NAME).ins $(NAME).dtx
 	$(LATEX) $<
 
-tex/$(NAME).dvi: $(NAME).dtx $(NAME).sty
+tex/$(NAME).dvi: $(NAME).dtx $(NAME).sty example.tex
 	mkdir -p tex
 	$(LATEX) $(LATEX_OPT) $<
 	$(LATEX) $(LATEX_OPT) $<
