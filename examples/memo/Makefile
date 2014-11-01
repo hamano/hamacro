@@ -9,7 +9,7 @@ all: memo.pdf
 
 memo.pdf:
 	mkdir -p tex
-	$(PANDOC) $(PANDOC_OPT) --template=memo.tmpl -o tex/memo.tex memo.md
+	$(PANDOC) $(PANDOC_OPT) --template=template.tex -o tex/memo.tex memo.md
 	$(LATEX) $(LATEX_OPT) tex/memo.tex
 	$(LATEX) $(LATEX_OPT) tex/memo.tex
 	dvipdfmx -o memo.pdf tex/memo.dvi
