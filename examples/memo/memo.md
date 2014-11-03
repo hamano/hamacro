@@ -1,6 +1,8 @@
-% Markdownテンプレート
-% HAMANO Tsukasa
-% \today
+---
+title: Markdownテンプレート
+author: HAMANO Tsukasa
+date: \today
+---
 
 # 見出し1
 ## 見出し2
