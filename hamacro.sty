@@ -194,12 +194,6 @@
   \endMakeFramed
 }
 
-\renewenvironment{quotation}{
-  \begin{quote}
-}{
-  \end{quote}
-}
-
 \usepackage{fancyvrb}
 
 \renewenvironment{verbatim}{
@@ -318,12 +312,6 @@
   otherkeywords={\#, \%}
 }
 
-\lstdefinelanguage{httpd.conf}
-{
-  morekeywords={VirtualHost, Include, Directory, LogFormat, CustomLog},
-  morecomment=[l]{\#}
-}
-
 \lstdefinelanguage{JavaScript}{
   keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
   ndkeywords={class, export, boolean, throw, implements, import, this},
@@ -332,6 +320,20 @@
   morecomment=[s]{/*}{*/},
   morestring=[b]',
   morestring=[b]\"
+}
+
+\lstdefinelanguage{httpd.conf}
+{
+  morekeywords={VirtualHost, Include, Directory, LogFormat, CustomLog},
+  morecomment=[l]{\#}
+}
+
+\lstdefinelanguage{nginx.conf}
+{
+  morekeywords={
+    server,server_name,listen,location,
+    proxy_pass, proxy_set_header},
+  morecomment=[l]{\#}
 }
 
 \endinput
