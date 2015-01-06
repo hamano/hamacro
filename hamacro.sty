@@ -54,6 +54,7 @@
 \usepackage{here}
 \usepackage{ctable}
 \usepackage{longtable}
+\usepackage{ulem}
 
 \colorlet{framerule}{gray}
 \colorlet{framebg}{gainsboro}
@@ -148,17 +149,23 @@
 {1em}{}
 [\titleline{\color{subcolor}\titlerule[1.5pt]}]
 
-\usepackage{ulem}
 \titleformat{\subsection}[block]
 {\gtfamily\bfseries\Large\def\ULthickness{1.5pt}}
 {\color{subcolor}\uline{\thesubsection{} \color{black}{#1}}}
 {1em}{}
 
-\usepackage{ulem}
+\titleformat{name=\subsection,numberless}[block]
+{\gtfamily\bfseries\Large\def\ULthickness{1.5pt}}
+{\color{subcolor}\uline{\color{black}{#1}}}
+{1em}{}
+
 \titleformat{\subsubsection}[block]
 {\gtfamily\bfseries\large}
 {\color{subcolor}{\thesubsubsection} \color{black}{#1}}{10em}{}
 
+\titleformat{name=\subsubsection,numberless}[block]
+{\gtfamily\bfseries\large}
+{\color{black}{#1}}{10em}{}
 
 \let\origemph\emph
 \newcommand{\redemph}[1]

@@ -74,6 +74,7 @@
 \usepackage{here}
 \usepackage{ctable}
 \usepackage{longtable}
+\usepackage{ulem}
 
 % カラーテーマ設定
 \colorlet{framerule}{gray}
@@ -175,20 +176,24 @@
 [\titleline{\color{subcolor}\titlerule[1.5pt]}]
 
 % subsection formatting
-\usepackage{ulem}
 \titleformat{\subsection}[block]
 {\gtfamily\bfseries\Large\def\ULthickness{1.5pt}}
 {\color{subcolor}\uline{\thesubsection{} \color{black}{#1}}}
 {1em}{}
 
+\titleformat{name=\subsection,numberless}[block]
+{\gtfamily\bfseries\Large\def\ULthickness{1.5pt}}
+{\color{subcolor}\uline{\color{black}{#1}}}
+{1em}{}
+
 % subsubsection formatting
-\usepackage{ulem}
 \titleformat{\subsubsection}[block]
 {\gtfamily\bfseries\large}
 {\color{subcolor}{\thesubsubsection} \color{black}{#1}}{10em}{}
 
-%\titleformat{\subsection}[hang]{\large\bfseries}{\thesubsection}{1zw}{}
-%            [{\titlerule}]
+\titleformat{name=\subsubsection,numberless}[block]
+{\gtfamily\bfseries\large}
+{\color{black}{#1}}{10em}{}
 
 % 修飾マクロ
 \let\origemph\emph
