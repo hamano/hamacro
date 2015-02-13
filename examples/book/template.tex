@@ -1,0 +1,61 @@
+\documentclass[a4paper
+$if(fontsize)$,$fontsize$$else$,12pt$endif$
+$if(twocolumn)$,twocolumn$else$,onecolumn$endif$
+]{jsbook}
+
+\usepackage{hamacro}
+\usepackage{pxjahyper}
+
+% usepackage
+\hypersetup{
+  pdfstartview={FitV},
+  pdftitle={$title$},
+  pdfauthor={$author$},
+  pdfsubject={$subject$},
+  pdfkeywords={$keywords$},
+}
+
+%\makeatletter
+%\renewcommand\@seccntformat[1]{}
+%\makeatother
+
+%\usepackage{bookmark}
+%\bookmarksetup{numbered}
+%\makeatletter
+%\bookmarksetup{%
+%  addtohook={%
+%    \ifnum\toclevel@chapter=\bookmarkget{level}\relax
+%      \renewcommand*{\numberline}[1]{CHAPTER #1: }%
+%    \fi
+%  },
+%}
+
+%\usepackage{ctable}
+%\usepackage{longtable}
+%\usepackage{enumerate}
+
+% title
+\title{$title$}
+\author{$author$}
+\date{$date$}
+
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection~#1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\prechaptername\ \thechapter\ \postchaptername~#1}{}}
+
+% document
+\begin{document}
+\maketitle
+
+\frontmatter
+\let\thesectionorig\thesection
+\renewcommand{\thesection}{}
+
+$if(toc)$
+\tableofcontents
+\clearpage
+$endif$
+%\setcounter{section}{-1}
+$body$
+
+\end{document}
