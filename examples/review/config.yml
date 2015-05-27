@@ -180,4 +180,6 @@ colophon: true
 # font_ext: ["ttf", "woff", "otf"]
 
 texstyle: reviewmacro
+texstyle: hamacro
+
 debug: true

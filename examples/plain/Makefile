@@ -1,7 +1,7 @@
 LATEX=platex
 #LATEX=uplatex
 LATEX_OPT=-shell-escape -output-directory=tex
-DVIPDFMX=dvipdfmx                                                               
+DVIPDFMX=dvipdfmx
 #DVIPDFMX_OPT=-f ptex-hiragino
 
 NAME=example
