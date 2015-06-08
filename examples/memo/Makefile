@@ -12,11 +12,11 @@ all: $(PDF)
 
 $(PDF): $(SRC) template.tex
 	mkdir -p tex
-	$(PANDOC) $(PANDOC_OPT) --template=template.tex -o tex/tmp.tex $(SRC)
-	sed -i -e 's/includegraphics{/includegraphics[width=\\columnwidth]{/g' tex/tmp.tex
-	$(LATEX) $(LATEX_OPT) tex/tmp.tex
-	$(LATEX) $(LATEX_OPT) tex/tmp.tex
-	dvipdfmx -o $(PDF) tex/tmp.dvi
+	$(PANDOC) $(PANDOC_OPT) --template=template.tex -o tex/$(NAME).tex $(SRC)
+	sed -i -e 's/includegraphics{/includegraphics[width=\\columnwidth]{/g' tex/$(NAME).tex
+	$(LATEX) $(LATEX_OPT) tex/$(NAME).tex
+	$(LATEX) $(LATEX_OPT) tex/$(NAME).tex
+	dvipdfmx -o $(PDF) tex/$(NAME).dvi
 
 clean:
 	rm -rf tex *.pdf *.xbb
