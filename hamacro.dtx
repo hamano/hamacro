@@ -217,7 +217,7 @@
 \newcommand{\bigquotemark}{
   {\fontsize{32pt}{32pt}\selectfont \color{accentcolor} \textbf{``}}
   \vskip -2.3em
-  \hskip 0.3zw
+  \hskip 0.5zw
 }
 \renewenvironment{quote}{
   \def\FrameCommand{
@@ -225,8 +225,8 @@
     \fcolorbox{gray}{gainsboro}
   }
   \MakeFramed {\advance\hsize-\width \FrameRestore}
-  \parindent 0zw % quoteマークがインデント代わり
-  \vskip -.5em
+  \parindent 0zw
+  \vskip -0.5em
   \hskip -1zw
   {\bigquotemark}
 }
