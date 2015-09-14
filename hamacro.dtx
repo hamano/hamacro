@@ -308,6 +308,10 @@
   \def\thelstlisting{}
 }
 
+% fix for pandoc 1.14
+\providecommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 %\captionsetup[lstlisting]{numberbychapter=false}
 
 % ハイフンをU+002D HYPHEN-MINUSのままで表示
