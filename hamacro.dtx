@@ -38,6 +38,7 @@
 % フォントを指定すること
 \usepackage[T1]{fontenc}
 \usepackage{txfonts}
+%\usepackage{newtxtext}
 \usepackage[deluxe]{otf}
 \usepackage[dvipdfmx]{graphicx}
 
@@ -77,6 +78,7 @@
 \usepackage{ctable}
 \usepackage{longtable}
 \usepackage{ulem}
+\usepackage{soul}
 
 % カラーテーマ設定
 \colorlet{framerule}{gray}
@@ -178,14 +180,17 @@
 [\titleline{\color{subcolor}\titlerule[1.5pt]}]
 
 % subsection formatting
+\newcommand\subseculine{\bgroup\markoverwith
+  {\textcolor{subcolor}{\rule[-1ex]{2pt}{1.5pt}}}\ULon}
+
 \titleformat{\subsection}[block]
 {\gtfamily\bfseries\Large}
-{\color{subcolor}\underline{\thesubsection{} \color{black}{#1}}}
+{\subseculine{\textcolor{subcolor}{\thesubsection{}} {#1}}}
 {1em}{}
 
 \titleformat{name=\subsection,numberless}[block]
 {\gtfamily\bfseries\Large}
-{\color{subcolor}\underline{\color{black}{#1}}}
+{\subseculine{#1}}
 {1em}{}
 
 % subsubsection formatting
