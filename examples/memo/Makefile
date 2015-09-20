@@ -1,8 +1,9 @@
-LATEX=platex
-#LATEX=uplatex
+LATEX=uplatex
 LATEX_OPT=-shell-escape -output-directory=tex
 PANDOC=pandoc
 PANDOC_OPT=-f markdown+yaml_metadata_block --toc --listings
+DVIPDFMX=dvipdfmx
+#DVIPDFMX_OPT=-f otf-up-hiragino
 
 NAME=memo
 
@@ -16,7 +17,7 @@ $(PDF): $(SRC) template.tex
 	sed -i -e 's/includegraphics{/includegraphics[width=\\columnwidth]{/g' tex/$(NAME).tex
 	$(LATEX) $(LATEX_OPT) tex/$(NAME).tex
 	$(LATEX) $(LATEX_OPT) tex/$(NAME).tex
-	dvipdfmx -o $(PDF) tex/$(NAME).dvi
+	$(DVIPDFMX) $(DVIPDFMX_OPT) -o $(PDF) tex/$(NAME).dvi
 
 clean:
 	rm -rf tex *.pdf *.xbb
