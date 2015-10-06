@@ -1,5 +1,9 @@
 \documentclass[a4paper,onecolumn,12pt,uplatex]{jsarticle}
 
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+
 \usepackage{hamacro}
 \hypersetup{
   pdfstartview={FitH},
@@ -25,6 +29,9 @@
 
 \section{はじめに}
 \lipsum[1]
+
+\section{画像}
+\includegraphics[width=\textwidth]{latex.eps}
 
 \section{おわりに}
 \lipsum[2]
