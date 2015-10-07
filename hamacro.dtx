@@ -302,20 +302,14 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
 \newcommand{\NormalTok}[1]{{#1}}
 
-% style for listings
-\usepackage{upquote}
-\usepackage{listings}
-%\usepackage{jlisting}
-\AtBeginDocument{
-  \def\lstlistingname{}
-  \def\thelstlisting{}
-}
-
 % fix for pandoc 1.14
 \providecommand{\tightlist}{
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-%\captionsetup[lstlisting]{numberbychapter=false}
+% style for listings
+\usepackage{upquote}
+\usepackage{listings}
+%\usepackage{jlisting}
 
 % ハイフンをU+002D HYPHEN-MINUSのままで表示
 %\makeatletter
@@ -329,16 +323,19 @@
 %\@empty\z@\@empty
 %\makeatother
 
-% TODO: 一部のPDFリーダーで白い線が入ってしまう問題がある
+% 一部のPDFリーダーで白い線が入ってしまう問題があるのでmdframeでラップする
 % http://tex.stackexchange.com/questions/196247/lstlisting-width-of-background-box
+
+% captionもmdframe内に入るのでいまいち
+\AtBeginDocument{
+  \def\lstlistingname{リスト}
+}
 
 \mdfsetup{
   linewidth=1truept,
   linecolor=gray,
   innerleftmargin=0.5zw,
   innerrightmargin=0.5zw,
-%  innertopmargin=0.5em,
-%  innerbottommargin=0.5em,
   backgroundcolor=gainsboro
 }
 
