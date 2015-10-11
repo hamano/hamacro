@@ -3,6 +3,11 @@ $if(fontsize)$,$fontsize$$else$,12pt$endif$
 $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
 ,uplatex]{jsarticle}
 
+% set include path
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+
 \usepackage{hamacro}
 
 % usepackage

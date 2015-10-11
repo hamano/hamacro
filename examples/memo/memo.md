@@ -56,13 +56,13 @@ This is an [example link](http://example.com/).
 
 `echo "Hello World."`
 
-`@先頭が日本語だとlistingsでエラー(未解決)`
-
 `C:\\Windows\`
+
+`_先頭が日本語だとlistingsでエラー(未解決)`
 
 `C:¥¥Windows¥`(未解決)
 
-~~~ {caption="hello.c"}
+~~~ {language="c" caption="hello.c"}
 /* コメント */
 #include <stdio.h>
 
@@ -106,7 +106,7 @@ pqrstuvwxyz{|}~
 > どこで生れたかとんと見当がつかぬ。
 
 # 画像
-![代替テキスト](latex.png)
+![代替テキスト](latex.eps)
 
 # テーブル
 
