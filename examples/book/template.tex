@@ -3,8 +3,12 @@ $if(fontsize)$,$fontsize$$else$,12pt$endif$
 $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
 ]{jsbook}
 
+% set include path
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+
 \usepackage{hamacro}
-\usepackage{pxjahyper}
 
 % usepackage
 \hypersetup{
