@@ -30,8 +30,6 @@ Tuesday
 Wednesday
 :   水曜日
 
-\clearpage
-
 # 文字修飾
  - 普通の文字(normal)
  - *強調(emph)*
@@ -74,11 +72,15 @@ int main(int argc, char *argv[]){
 
 コンパイル:
 
-    $ gcc -o hello hello.c
+~~~
+$ gcc -o hello hello.c
+~~~
 
 日本語:
 
-    あいうえお
+~~~
+あいうえお
+~~~
 
 79文字入ればOK
 
