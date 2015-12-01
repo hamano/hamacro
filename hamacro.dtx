@@ -413,6 +413,17 @@
   morecomment=[l]{\#}
 }
 
+\lstdefinelanguage{slapd.conf}
+{
+  morekeywords={
+    include,loglevel,timelimit,sizelimit,
+    database,suffix,rootdn,rootpw,directory,
+    overlay,index,
+  },
+  morestring=[b]\",
+  morecomment=[l]{\#}
+}
+
 % \fi
 %
 % \iffalse
