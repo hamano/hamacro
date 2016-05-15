@@ -60,26 +60,33 @@ This is an [example link](http://example.com/).
 
 `C:¥¥Windows¥`(未解決)
 
-~~~ {language="c" caption="hello.c"}
+~~~ {.c}
 /* コメント */
 #include <stdio.h>
 
 int main(int argc, char *argv[]){
-    printf("Hello World!");
+    printf("こんにちは");
     return 0;
 }
 ~~~
 
 コンパイル:
 
-~~~
+~~~ {.bash}
 $ gcc -o hello hello.c
 ~~~
 
-日本語:
+~~~ {.python}
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-~~~
-あいうえお
+import sys
+
+def main():
+    print('こんにちは') # なぜかスペースが入る
+
+if __name__ == '__main__':
+    main()
 ~~~
 
 79文字入ればOK

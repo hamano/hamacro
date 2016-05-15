@@ -1,7 +1,7 @@
 LATEX=uplatex
 LATEX_OPT=-shell-escape -output-directory=tex
 PANDOC=pandoc
-PANDOC_OPT=-f markdown+yaml_metadata_block --listings # --toc
+PANDOC_OPT=-f markdown+yaml_metadata_block # --toc
 DVIPDFMX=dvipdfmx
 DVIPDFMX_OPT=-f otf-up-hiragino
 
