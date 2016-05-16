@@ -50,15 +50,18 @@ This is an [example link](http://example.com/).
 
 \clearpage
 
+# インラインコード
+
+* `echo "Hello World."`
+
+* `インラインコードでNon-ASCII文字を利用できないのでlistingsを使ってはいけない`
+
+* Windowsのパス
+    - `C:\\Windows\`
+    - `C:¥¥Windows¥`(未解決)
+    - C:\textyen{}\textyen{}Windows\textyen{}
+
 # コード
-
-`echo "Hello World."`
-
-`C:\\Windows\`
-
-`_先頭が日本語だとlistingsでエラー(未解決)`
-
-`C:¥¥Windows¥`(未解決)
 
 ~~~ {.c}
 /* コメント */
