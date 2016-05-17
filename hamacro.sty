@@ -188,74 +188,56 @@
            {\origemph{\bou{#1}}}
 
 
-\usepackage{framed}
 \usepackage{anyfontsize}
 \newcommand{\bigquotemark}{
-  {\fontsize{32pt}{32pt}\selectfont \color{accentcolor} \textbf{``}}
+  {\fontsize{3em}{3em}\selectfont \color{accentcolor} \textbf{``}}
   \vskip -2.3em
-  \hskip 0.5zw
+  \hskip 1.5zw
 }
 \renewenvironment{quote}{
-  \def\FrameCommand{
-    \fboxsep=\FrameSep
-    \fcolorbox{gray}{gainsboro}
-  }
-  \MakeFramed {\advance\hsize-\width \FrameRestore}
+  \begin{mdframed}
   \parindent 0zw
   \vskip -0.5em
-  \hskip -1zw
   {\bigquotemark}
 }
 {
   \smallskip
-  \endMakeFramed
+  \end{mdframed}
 }
 
+\usepackage{mdframed}
 \usepackage{fancyvrb}
 
 \renewenvironment{verbatim}{
   \VerbatimEnvironment
-  \def\FrameCommand{
-    \fboxsep=4truept
-    \fcolorbox{gray}{gainsboro}
-  }
-  \MakeFramed{\advance\hsize-\width \FrameRestore}
+  \begin{mdframed}
   \tt\fontsize{11.2truept}{1.2em}
   \begin{Verbatim}}
 {
   \end{Verbatim}
-  \endMakeFramed
+  \end{mdframed}
 }
 
 \newenvironment{verbatim60}{
   \VerbatimEnvironment
-  \def\FrameCommand{
-    \fboxsep=4truept
-    \fcolorbox{gray}{gainsboro}
-  }
-  \MakeFramed{\advance\hsize-\width \FrameRestore}
+  \begin{mdframed}
   \tt\fontsize{15truept}{1.5em}
   \begin{Verbatim}}
 {
   \end{Verbatim}
-  \endMakeFramed
+  \end{mdframed}
 }
 
 \newenvironment{verbatim40}{
   \VerbatimEnvironment
-  \def\FrameCommand{
-    \fboxsep=4truept
-    \fcolorbox{gray}{gainsboro}
-  }
-  \MakeFramed{\advance\hsize-\width \FrameRestore}
+  \begin{mdframed}
   \tt\fontsize{22truept}{1.5em}
   \begin{Verbatim}}
 {
   \end{Verbatim}
-  \endMakeFramed
+  \end{mdframed}
 }
 
-\usepackage{mdframed}
 \newenvironment{Shaded}{\begin{mdframed}}{\end{mdframed}}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
