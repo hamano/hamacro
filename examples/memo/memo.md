@@ -13,6 +13,7 @@ date: \today
  * one
  * two
  * three
+    - four
 
 ## 順序リスト
  1. 睦月
@@ -52,11 +53,11 @@ This is an [example link](http://example.com/).
 
 # インラインコード
 
-* `echo "Hello World."`
+ * `echo "Hello World."`
 
-* `インラインコードでNon-ASCII文字を利用できないのでlistingsを使ってはいけない`
+ * `インラインコードでNon-ASCII文字を利用できないのでlistingsを使ってはいけない`
 
-* Windowsのパス
+ * Windowsのパス
     - `C:\\Windows\`
     - `C:¥¥Windows¥`(未解決)
     - C:\textyen{}\textyen{}Windows\textyen{}
