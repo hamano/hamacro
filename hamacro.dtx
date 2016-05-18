@@ -222,6 +222,14 @@
 
 %\let\emph\bouemph
 
+% setting for mdframed
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{
+  middlelinewidth=2pt,
+  middlelinecolor=gray,
+  backgroundcolor=gainsboro,
+  roundcorner=3pt}
+
 % style for quote
 %\usepackage{framed}
 \usepackage{anyfontsize}
@@ -243,8 +251,6 @@
 }
 
 % style for verbatim
-\usepackage{mdframed}
-\usepackage{fancyvrb}
 
 \renewenvironment{verbatim}{
   \VerbatimEnvironment
@@ -277,6 +283,7 @@
 }
 
 % style for pandoc code highlighting
+\usepackage{fancyvrb}
 \newenvironment{Shaded}{\begin{mdframed}}{\end{mdframed}}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}

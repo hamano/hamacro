@@ -188,6 +188,13 @@
            {\origemph{\bou{#1}}}
 
 
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{
+  middlelinewidth=2pt,
+  middlelinecolor=gray,
+  backgroundcolor=gainsboro,
+  roundcorner=3pt}
+
 \usepackage{anyfontsize}
 \newcommand{\bigquotemark}{
   {\fontsize{3em}{3em}\selectfont \color{accentcolor} \textbf{``}}
@@ -205,8 +212,6 @@
   \end{mdframed}
 }
 
-\usepackage{mdframed}
-\usepackage{fancyvrb}
 
 \renewenvironment{verbatim}{
   \VerbatimEnvironment
@@ -238,6 +243,7 @@
   \end{mdframed}
 }
 
+\usepackage{fancyvrb}
 \newenvironment{Shaded}{\begin{mdframed}}{\end{mdframed}}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
