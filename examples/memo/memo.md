@@ -59,7 +59,6 @@ This is an [example link](http://example.com/).
 
  * Windowsのパス
     - `C:\\Windows\`
-    - `C:¥¥Windows¥`(未解決)
     - C:\textyen{}\textyen{}Windows\textyen{}
 
 # コード
