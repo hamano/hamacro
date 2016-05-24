@@ -1,5 +1,5 @@
 LATEX=uplatex
-LATEX_OPT=-shell-escape -output-directory=tex
+LATEX_OPT=-output-directory=tex
 PANDOC=pandoc
 PANDOC_OPT=-f markdown+yaml_metadata_block # --toc
 DVIPDFMX=dvipdfmx
