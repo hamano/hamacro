@@ -58,8 +58,10 @@ This is an [example link](http://example.com/).
  * `インラインコードでNon-ASCII文字を利用できないのでlistingsを使ってはいけない`
 
  * Windowsのパス
-    - `C:\\Windows\`
+    - C:\\Windows\\
+    - `C:\Windows\`
     - C:\textyen{}\textyen{}Windows\textyen{}
+    - C:¥Windows¥
 
 # コード
 
