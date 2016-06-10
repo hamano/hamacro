@@ -143,18 +143,32 @@
   \vskip 1\baselineskip
 }
 
+\usepackage{etex}
 \usepackage[explicit]{titlesec}
-\titleformat{name=\section}[block]
-{\gtfamily\bfseries\LARGE}
-{\color{subcolor}{\thesection} \color{black}{#1}}
-{1em}{}
-[\titleline{\color{subcolor}\titlerule[1.5pt]}]
 
-\titleformat{name=\section,numberless}[block]
-{\gtfamily\bfseries\LARGE}
-{#1}
-{1em}{}
-[\titleline{\color{subcolor}\titlerule[1.5pt]}]
+%% section formatting
+\newcommand\sectionformat[2]{
+  \tikz {
+    \node [
+      draw=subcolor,
+      line width=1.5pt,
+      fill=gray!20,
+      align=left,
+      rounded corners=6pt,
+      text width=\textwidth
+    ] {\textcolor{subcolor}{#2}\;\textcolor{black}{#1}};
+  }
+}
+
+\titleformat{name=\section}
+            {\gtfamily\bfseries\LARGE}{}{0pt}
+            {\sectionformat{#1}{\thesection}}
+\titleformat{name=\section,numberless}
+            {\gtfamily\bfseries\LARGE}{}{0pt}
+            {\sectionformat{#1}{}}
+\titlespacing*{\section}{-1em}{3ex}{-4ex}
+
+
 
 \newcommand\subseculine{\bgroup\markoverwith
   {\textcolor{subcolor}{\rule[-1ex]{2pt}{1.5pt}}}\ULon}
