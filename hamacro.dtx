@@ -135,7 +135,7 @@
   \newpage
   \null
   \begin{center}
-    {\LARGE\gtfamily\bfseries \@title \par}
+    {\LARGE\gtfamily\bfseries{\@title}\par}
   \end{center}
   \begin{flushright}
     {\large \@date \par}
@@ -191,10 +191,10 @@
 }
 
 \titleformat{name=\section}
-            {\gtfamily\bfseries\LARGE}{}{0pt}
-            {\sectionformat{#1}{\thesection}}
+            {\sf\bfseries\LARGE}{}{0pt}
+            {\sectionformat{#1}{\textrm\thesection}}
 \titleformat{name=\section,numberless}
-            {\gtfamily\bfseries\LARGE}{}{0pt}
+            {\sf\bfseries\LARGE}{}{0pt}
             {\sectionformat{#1}{}}
 % \titlespacing{command}{left}{before-sep}{after-sep}{right-sep}
 \titlespacing*{\section}{-1em}{3ex}{-4ex}
