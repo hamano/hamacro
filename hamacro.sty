@@ -168,20 +168,18 @@
             {\sectionformat{#1}{}}
 \titlespacing*{\section}{-1em}{3ex}{-4ex}
 
-
-
-\newcommand\subseculine{\bgroup\markoverwith
-  {\textcolor{subcolor}{\rule[-1ex]{2pt}{1.5pt}}}\ULon}
-
-\titleformat{\subsection}[block]
-{\gtfamily\bfseries\Large}
-{\subseculine{\textcolor{subcolor}{\thesubsection{}} {#1}}}
-{1em}{}
-
+\titleformat{name=\subsection}[block]
+            {\gtfamily\bfseries\Large}
+            {\textcolor{subcolor}{\thesubsection} {#1}}
+            {0pt}
+            {}
+            [\vspace{-1em}\textcolor{subcolor}{\titlerule[1.5pt]}]
 \titleformat{name=\subsection,numberless}[block]
-{\gtfamily\bfseries\Large}
-{\subseculine{#1}}
-{1em}{}
+            {\gtfamily\bfseries\Large}
+            {#1}
+            {0pt}
+            {}
+            [\vspace{-1em}\textcolor{subcolor}{\titlerule[1.5pt]}]
 
 \titleformat{\subsubsection}[block]
 {\gtfamily\bfseries\large}
