@@ -234,6 +234,11 @@
 {\gtfamily\bfseries\large}
 {\color{black}{#1}}{10em}{}
 
+%% paragraph formatting
+\setcounter{secnumdepth}{4}
+\titleformat{name=\paragraph}[hang]{\gtfamily\bfseries\normalsize}{\color{subcolor}{\theparagraph} \color{black}{#1}}{1em}{}
+\titleformat{name=\paragraph,numberless}[hang]{\gtfamily\bfseries\normalsize}{#1}{1em}{}
+
 % 修飾マクロ
 \let\origemph\emph
 \newcommand{\redemph}[1]
