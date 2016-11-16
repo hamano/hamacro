@@ -174,7 +174,7 @@
 
 % titlesec settings
 \usepackage{etex}
-\usepackage[explicit]{titlesec}
+\usepackage[explicit,calcwidth]{titlesec}
 
 %% section formatting
 \newcommand\sectionformat[2]{
@@ -202,30 +202,35 @@
 % subsection formatting
 \titleformat{name=\subsection}[block]
             {\gtfamily\bfseries\Large}
-            {\textcolor{subcolor}{\thesubsection} {#1}}
-            {0pt}
-            {}
-            [\vspace{-1em}\textcolor{subcolor}{\titlerule[1.5pt]}]
+            {\textcolor{subcolor}{\thesubsection}}
+            {0.5em}
+            {#1}
+            [{\addtolength{\titlewidth}{0.2em}
+                \titleline*[l]{\color{subcolor}\titlerule[1.5pt]}}]
 \titleformat{name=\subsection,numberless}[block]
             {\gtfamily\bfseries\Large}
-            {#1}
-            {0pt}
             {}
-            [\vspace{-1em}\textcolor{subcolor}{\titlerule[1.5pt]}]
+            {0.5em}
+            {#1}
+            [{\addtolength{\titlewidth}{0.2em}
+                \titleline*[l]{\color{subcolor}\titlerule[1.5pt]}}]
 
 % subsubsection formatting
 \titleformat{\subsubsection}[block]
-{\gtfamily\bfseries\large}
-{\color{subcolor}{\thesubsubsection} \color{black}{#1}}{10em}{}
-
+            {\gtfamily\bfseries\large}
+            {\color{subcolor}{\thesubsubsection}}
+            {0.5em}
+            {#1}
 \titleformat{name=\subsubsection,numberless}[block]
-{\gtfamily\bfseries\large}
-{\color{black}{#1}}{10em}{}
+            {\gtfamily\bfseries\large}
+            {}
+            {0.5em}
+            {#1}
 
 %% paragraph formatting
 \setcounter{secnumdepth}{4}
-\titleformat{name=\paragraph}[hang]{\gtfamily\bfseries\normalsize}{\color{subcolor}{\theparagraph} \color{black}{#1}}{1em}{}
-\titleformat{name=\paragraph,numberless}[hang]{\gtfamily\bfseries\normalsize}{#1}{1em}{}
+\titleformat{name=\paragraph}[block]{\gtfamily\bfseries\normalsize}{\color{subcolor}{\theparagraph} \color{black}{#1}}{1em}{}
+\titleformat{name=\paragraph,numberless}[block]{\gtfamily\bfseries\normalsize}{#1}{1em}{}
 
 % 修飾マクロ
 \let\origemph\emph
