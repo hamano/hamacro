@@ -17,8 +17,9 @@
 
 \usepackage[T1]{fontenc}
 \usepackage{newtxmath}
-\renewcommand{\rmdefault}{ptm} % Nimbus Roman No9 L
-\renewcommand{\sfdefault}{phv} % Nimbus Sans L
+\usepackage{tgtermes}
+\usepackage{tgheros}
+\renewcommand{\bfdefault}{bx} % 和文がBoldにならない問題回避、tgtermesのバグ?
 \usepackage{inconsolata} % only ttdefault
 \usepackage[deluxe]{otf}
 \usepackage[dvipdfmx]{graphicx}
@@ -161,22 +162,22 @@
 }
 
 \titleformat{name=\section}
-            {\sf\bfseries\LARGE}{}{0pt}
+            {\sf\gtfamily\bfseries\LARGE}{}{0pt}
             {\sectionformat{#1}{\textrm\thesection}}
 \titleformat{name=\section,numberless}
-            {\sf\bfseries\LARGE}{}{0pt}
+            {\sf\gtfamily\bfseries\LARGE}{}{0pt}
             {\sectionformat{#1}{}}
 \titlespacing*{\section}{-1em}{3ex}{-4ex}
 
 \titleformat{name=\subsection}[block]
-            {\gtfamily\bfseries\Large}
+            {\sf\gtfamily\bfseries\Large}
             {\textcolor{subcolor}{\thesubsection}}
             {0.5em}
             {#1}
             [{\addtolength{\titlewidth}{0.2em}
                 \titleline*[l]{\color{subcolor}\titlerule[1.5pt]}}]
 \titleformat{name=\subsection,numberless}[block]
-            {\gtfamily\bfseries\Large}
+            {\sf\gtfamily\bfseries\Large}
             {}
             {0.5em}
             {#1}
@@ -184,20 +185,22 @@
                 \titleline*[l]{\color{subcolor}\titlerule[1.5pt]}}]
 
 \titleformat{\subsubsection}[block]
-            {\gtfamily\bfseries\large}
+            {\sf\gtfamily\bfseries\large}
             {\color{subcolor}{\thesubsubsection}}
             {0.5em}
             {#1}
 \titleformat{name=\subsubsection,numberless}[block]
-            {\gtfamily\bfseries\large}
+            {\sf\gtfamily\bfseries\large}
             {}
             {0.5em}
             {#1}
 
 %% paragraph formatting
 \setcounter{secnumdepth}{4}
-\titleformat{name=\paragraph}[block]{\gtfamily\bfseries\normalsize}{\color{subcolor}{\theparagraph} \color{black}{#1}}{1em}{}
-\titleformat{name=\paragraph,numberless}[block]{\gtfamily\bfseries\normalsize}{#1}{1em}{}
+\titleformat{name=\paragraph}[block]
+            {\sf\gtfamily\bfseries\normalsize}{\color{subcolor}{\theparagraph} \color{black}{#1}}{1em}{}
+\titleformat{name=\paragraph,numberless}[block]
+            {\sf\gtfamily\bfseries\normalsize}{#1}{1em}{}
 
 \let\origemph\emph
 \newcommand{\redemph}[1]
