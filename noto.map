@@ -6,8 +6,8 @@ uphminr-h	unicode	NotoSerifCJKjp-Medium.otf
 uphminr-v	unicode	NotoSerifCJKjp-Medium.otf
 uphminb-h	unicode	NotoSerifCJKjp-Bold.otf
 uphminb-v	unicode NotoSerifCJKjp-Bold.otf
-uphgothr-h	unicode	NotoSansCJKjp-Medium.otf
-uphgothr-v	unicode	NotoSansCJKjp-Medium.otf
+uphgothr-h	unicode	NotoSansCJKjp-Regular.otf
+uphgothr-v	unicode	NotoSansCJKjp-Regular.otf
 uphgothb-h	unicode	NotoSansCJKjp-Bold.otf
 uphgothb-v	unicode	NotoSansCJKjp-Bold.otf
 uphgotheb-h	unicode	NotoSansCJKjp-Black.otf
@@ -22,8 +22,8 @@ uphminrn-h	unicode	NotoSerifCJKjp-Medium.otf
 uphminrn-v	unicode	NotoSerifCJKjp-Medium.otf
 uphminbn-h	unicode	NotoSerifCJKjp-Bold.otf
 uphminbn-v	unicode	NotoSerifCJKjp-Bold.otf
-uphgothrn-h	unicode	NotoSansCJKjp-Medium.otf
-uphgothrn-v	unicode	NotoSansCJKjp-Medium.otf
+uphgothrn-h	unicode	NotoSansCJKjp-Regular.otf
+uphgothrn-v	unicode	NotoSansCJKjp-Regular.otf
 uphgothbn-h	unicode	NotoSansCJKjp-Bold.otf
 uphgothbn-v	unicode	NotoSansCJKjp-Bold.otf
 uphgothebn-h	unicode	NotoSansCJKjp-Black.otf
