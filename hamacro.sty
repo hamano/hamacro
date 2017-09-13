@@ -213,6 +213,9 @@
            {\origemph{\bou{#1}}}
 
 
+\let\origtableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{\sffamily\origtableofcontents}
+
 \usepackage[framemethod=TikZ]{mdframed}
 \mdfsetup{
   middlelinewidth=2pt,
