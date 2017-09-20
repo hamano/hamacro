@@ -243,7 +243,7 @@
 
 \renewenvironment{verbatim}{
   \VerbatimEnvironment
-  \begin{mdframed}
+  \begin{mdframed}[innerleftmargin=1ex]
   \tt\fontsize{11.2truept}{1.2em}
   \begin{Verbatim}}
 {
@@ -253,7 +253,7 @@
 
 \newenvironment{verbatim60}{
   \VerbatimEnvironment
-  \begin{mdframed}
+  \begin{mdframed}[innerleftmargin=1ex]
   \tt\fontsize{15truept}{1.5em}
   \begin{Verbatim}}
 {
@@ -263,7 +263,7 @@
 
 \newenvironment{verbatim40}{
   \VerbatimEnvironment
-  \begin{mdframed}
+  \begin{mdframed}[innerleftmargin=1ex]
   \tt\fontsize{22truept}{1.5em}
   \begin{Verbatim}}
 {
@@ -272,7 +272,11 @@
 }
 
 \usepackage{fancyvrb}
-\newenvironment{Shaded}{\begin{mdframed}}{\end{mdframed}}
+\newenvironment{Shaded}
+{
+  \begin{mdframed}[innerleftmargin=1ex]
+  \tt\fontsize{11.2truept}{1.2em}
+}{\end{mdframed}}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
