@@ -156,7 +156,7 @@
       fill=gray!20,
       align=left,
       rounded corners=6pt,
-      text width=\textwidth
+      text width=\columnwidth
     ] {\textcolor{subcolor}{#2}\;\textcolor{black}{#1}};
   }
 }
@@ -167,7 +167,7 @@
 \titleformat{name=\section,numberless}
             {\sf\gtfamily\bfseries\LARGE}{}{0pt}
             {\sectionformat{#1}{}}
-\titlespacing*{\section}{-1em}{3ex}{-4ex}
+\titlespacing*{\section}{-1em}{3ex}{-5ex}
 
 \titleformat{name=\subsection}[block]
             {\sf\gtfamily\bfseries\Large}
@@ -183,6 +183,7 @@
             {#1}
             [{\addtolength{\titlewidth}{0.2em}
                 \titleline*[l]{\color{subcolor}\titlerule[1.5pt]}}]
+\titlespacing*{\subsection}{0em}{1ex}{2ex}
 
 \titleformat{\subsubsection}[block]
             {\sf\gtfamily\bfseries\large}
