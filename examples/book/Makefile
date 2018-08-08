@@ -1,8 +1,6 @@
-LATEX=platex
-#LATEX=uplatex
+LATEX=uplatex
 LATEX_OPT=-shell-escape -output-directory=tex
-#PANDOC=pandoc
-PANDOC=~/.cabal/bin/pandoc
+PANDOC=pandoc
 PANDOC_OPT=-f markdown+yaml_metadata_block --toc --listings --chapters
 
 all: book.pdf

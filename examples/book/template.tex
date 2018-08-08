@@ -1,7 +1,7 @@
 \documentclass[a4paper
 $if(fontsize)$,$fontsize$$else$,12pt$endif$
 $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
-]{jsbook}
+,uplatex]{jsbook}
 
 % set include path
 \makeatletter
@@ -59,6 +59,10 @@ $if(toc)$
 \tableofcontents
 \clearpage
 $endif$
+
+\mainmatter
+\let\thesection\thesectionorig
+
 %\setcounter{section}{-1}
 $body$
 
