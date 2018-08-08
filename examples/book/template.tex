@@ -9,6 +9,7 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
 \makeatother
 
 \usepackage{hamacro}
+\usepackage{indentfirst}
 
 % usepackage
 \hypersetup{
@@ -18,10 +19,6 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
   pdfsubject={$subject$},
   pdfkeywords={$keywords$},
 }
-
-%\makeatletter
-%\renewcommand\@seccntformat[1]{}
-%\makeatother
 
 %\usepackage{bookmark}
 %\bookmarksetup{numbered}
@@ -43,7 +40,6 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
 \author{$author$}
 \date{$date$}
 
-
 \renewcommand{\sectionmark}[1]{\markright{\thesection~#1}{}}
 \renewcommand{\chaptermark}[1]{\markboth{\prechaptername\ \thechapter\ \postchaptername~#1}{}}
 
@@ -51,19 +47,6 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
 \begin{document}
 \maketitle
 
-\frontmatter
-\let\thesectionorig\thesection
-\renewcommand{\thesection}{}
-
-$if(toc)$
-\tableofcontents
-\clearpage
-$endif$
-
-\mainmatter
-\let\thesection\thesectionorig
-
-%\setcounter{section}{-1}
 $body$
 
 \end{document}
