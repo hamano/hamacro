@@ -1,7 +1,6 @@
 ---
-title: Markdownテンプレート
+title: 本のテンプレート
 author: HAMANO Tsukasa
-date: \today
 ---
 
 \frontmatter

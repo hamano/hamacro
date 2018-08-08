@@ -35,13 +35,30 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
 %\usepackage{longtable}
 %\usepackage{enumerate}
 
+% jsbookで目次をブックマークするための修正
+% chapterのスターを消しただけ
+\makeatletter
+\renewcommand{\tableofcontents}{%
+  \settowidth\jsc@tocl@width{\headfont\prechaptername\postchaptername}%
+  \settowidth\@tempdima{\headfont\appendixname}%
+  \ifdim\jsc@tocl@width<\@tempdima \setlength\jsc@tocl@width{\@tempdima}\fi
+  \ifdim\jsc@tocl@width<2zw \divide\jsc@tocl@width by 2 \advance\jsc@tocl@width 1zw\fi
+  \if@twocolumn
+    \@restonecoltrue\onecolumn
+  \else
+    \@restonecolfalse
+  \fi
+  \chapter{\contentsname}%
+  \@mkboth{\contentsname}{}%
+  \@starttoc{toc}%
+  \if@restonecol\twocolumn\fi
+}
+\makeatother
+
 % title
 \title{$title$}
 \author{$author$}
 \date{$date$}
-
-\renewcommand{\sectionmark}[1]{\markright{\thesection~#1}{}}
-\renewcommand{\chaptermark}[1]{\markboth{\prechaptername\ \thechapter\ \postchaptername~#1}{}}
 
 % document
 \begin{document}
