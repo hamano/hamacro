@@ -1,11 +1,11 @@
 LATEX=uplatex
 LATEX_OPT=-shell-escape -output-directory=tex
 PANDOC=pandoc
-PANDOC_OPT=-f markdown+yaml_metadata_block --toc --listings --chapters
+PANDOC_OPT=-f markdown+yaml_metadata_block --toc --chapters
 
 all: book.pdf
 
-book.pdf:
+book.pdf: book.md
 	mkdir -p tex
 	$(PANDOC) $(PANDOC_OPT) --template=template.tex -o tex/book.tex book.md
 	$(LATEX) $(LATEX_OPT) tex/book.tex
