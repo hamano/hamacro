@@ -1,8 +1,8 @@
 LATEX=uplatex
 LATEX_OPT=-shell-escape -output-directory=tex
 DVIPDFMX=dvipdfmx
-DVIPDFMX_OPT=-f otf-up-hiragino
-#DVIPDFMX_OPT=-f noto
+#DVIPDFMX_OPT=-f otf-up-hiragino
+DVIPDFMX_OPT=-f noto
 NAME=hamacro
 
 all: $(NAME).pdf
