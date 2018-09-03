@@ -108,6 +108,13 @@
 }
 \ProcessOptions
 
+% 脚注の罫線を調整
+\renewcommand{\footnoterule}{
+  \kern -3pt
+  \hrule width \columnwidth
+  \kern 2.6pt
+}
+
 % jsclassesとgeometryパッケージは相性が悪い
 %\usepackage[a4paper,top=35mm, bottom=30mm, left=30mm, right=30mm]{geometry}
 \setlength{\oddsidemargin}{-1truein}
