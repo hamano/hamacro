@@ -79,6 +79,17 @@
   \colorlet{accentcolor}{lightskyblue}
   \colorlet{subcolor}{samuraiblue}
 }
+
+\DeclareOption{nomargin}{
+  \setlength{\oddsidemargin}{-0.1\paperwidth}
+  \setlength{\evensidemargin}{-0.1\paperwidth}
+  \setlength{\marginparwidth}{0pt}
+  \setlength{\marginparsep}{0pt}
+  \setlength{\textwidth}{0.9\paperwidth}
+  \setlength{\topmargin}{-1truein}
+  \setlength{\textheight}{0.9\paperheight}
+}
+
 \ProcessOptions
 
 \renewcommand{\footnoterule}{
@@ -87,14 +98,6 @@
   \kern 2.6pt
 }
 
-\setlength{\oddsidemargin}{-1truein}
-\addtolength{\oddsidemargin}{0.11\paperwidth}
-\setlength{\evensidemargin}{-1truein}
-\addtolength{\evensidemargin}{0.11\paperwidth}
-\setlength{\marginparwidth}{0.10\paperwidth}
-\setlength{\marginparsep}{0.005\paperwidth}
-\setlength{\textwidth}{\paperwidth}
-\addtolength{\textwidth}{-0.22\paperwidth}
 
 \message{^^J}
 \message{***** Layout Info *****^^J}
@@ -256,8 +259,8 @@
 
 \renewenvironment{verbatim}{
   \VerbatimEnvironment
-  \begin{mdframed}[innerleftmargin=1ex]
-  \tt\fontsize{11.2truept}{1.2em}
+  \begin{mdframed}[innerleftmargin=0.5ex]
+  \tt\fontsize{11truept}{1.2em}
   \begin{Verbatim}}
 {
   \end{Verbatim}
@@ -266,8 +269,8 @@
 
 \newenvironment{verbatim60}{
   \VerbatimEnvironment
-  \begin{mdframed}[innerleftmargin=1ex]
-  \tt\fontsize{15truept}{1.5em}
+  \begin{mdframed}[innerleftmargin=0.8ex]
+  \tt\fontsize{14.5truept}{1.5em}
   \begin{Verbatim}}
 {
   \end{Verbatim}
@@ -288,7 +291,7 @@
 \newenvironment{Shaded}
 {
   \begin{mdframed}[innerleftmargin=1ex]
-  \tt\fontsize{11.2truept}{1.2em}
+  \tt\fontsize{11truept}{1.2em}
 }{\end{mdframed}}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
@@ -357,8 +360,8 @@
   rulecolor=\color{gainsboro},
   backgroundcolor=\color{gainsboro},
   framesep=0pt,
-  xleftmargin=0pt,
-  basicstyle=\fontsize{11.2truept}{1.2em}\tt,
+  xleftmargin=-0.1ex,
+  basicstyle=\fontsize{11truept}{1.2em}\tt,
   belowskip=-0.5em,
   identifierstyle=\color{black},
   commentstyle=\color{brown},

@@ -3,7 +3,8 @@ LATEX_OPT=-output-directory=tex
 PANDOC=pandoc
 PANDOC_OPT=-f markdown+yaml_metadata_block # --toc
 DVIPDFMX=dvipdfmx
-DVIPDFMX_OPT=-f otf-up-hiragino
+#DVIPDFMX_OPT=-f otf-up-hiragino
+DVIPDFMX_OPT=-f ../../noto
 
 NAME=memo
 
