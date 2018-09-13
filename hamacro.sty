@@ -26,8 +26,17 @@
 
 \usepackage[dvipdfmx]{color}
 \usepackage[dvipdfmx]{xcolor}
+\definecolor{dimgray}{HTML}{696969}
 \definecolor{lightgray}{HTML}{D3D3D3}
 \definecolor{gainsboro}{HTML}{DCDCDC}
+\definecolor{gray90}{gray}{0.90} % E5E5E5
+\definecolor{gray91}{gray}{0.91} % E8E8E8
+\definecolor{gray92}{gray}{0.92} % EBEBEB
+\definecolor{gray93}{gray}{0.93} % EDEDED
+\definecolor{gray94}{gray}{0.94} % F0F0F0
+\definecolor{gray95}{gray}{0.95} % F2F2F2
+\definecolor{floralwhite}{HTML}{FFFAF0}
+
 \definecolor{azure}{HTML}{F0FFFF}
 \definecolor{darkblue}{HTML}{00008B}
 \definecolor{midnightblue}{HTML}{191970}
@@ -60,8 +69,9 @@
 \usepackage{ulem}
 \usepackage{soul}
 
-\colorlet{framerule}{gray}
-\colorlet{framebg}{gainsboro}
+\colorlet{sectionbg}{gray90}
+\colorlet{framerule}{dimgray}
+\colorlet{framebg}{gray90}
 \colorlet{linkcolor}{blue}
 
 \colorlet{accentcolor}{black}
@@ -168,7 +178,7 @@
     \node [
       draw=subcolor,
       line width=1.5pt,
-      fill=gray!20,
+      fill=sectionbg,
       align=left,
       rounded corners=6pt,
       text width=\columnwidth
@@ -235,8 +245,8 @@
 \usepackage[framemethod=TikZ]{mdframed}
 \mdfsetup{
   middlelinewidth=2pt,
-  middlelinecolor=gray,
-  backgroundcolor=gainsboro,
+  middlelinecolor=framerule,
+  backgroundcolor=framebg,
   roundcorner=3pt}
 
 \usepackage{anyfontsize}
@@ -344,7 +354,7 @@
   linecolor=gray,
   innerleftmargin=0.5zw,
   innerrightmargin=0.5zw,
-  backgroundcolor=gainsboro
+  backgroundcolor=framebg
 }
 
 \BeforeBeginEnvironment{lstlisting}{
@@ -357,8 +367,8 @@
 
 \lstset{
   frame=single,
-  rulecolor=\color{gainsboro},
-  backgroundcolor=\color{gainsboro},
+  rulecolor=\color{framebg},
+  backgroundcolor=\color{framebg},
   framesep=0pt,
   xleftmargin=-0.1ex,
   basicstyle=\fontsize{11truept}{1.2em}\tt,
