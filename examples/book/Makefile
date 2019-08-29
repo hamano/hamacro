@@ -1,7 +1,7 @@
 LATEX=uplatex
 LATEX_OPT=-shell-escape -output-directory=tex
 PANDOC=pandoc
-PANDOC_OPT=-f markdown+yaml_metadata_block --toc --chapters
+PANDOC_OPT=-f markdown+yaml_metadata_block --toc --top-level-division=chapter
 
 all: book.pdf
 
