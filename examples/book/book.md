@@ -4,24 +4,31 @@ author: HAMANO Tsukasa
 ---
 
 \frontmatter
-\let\thesectionorig\thesection
-\renewcommand{\thesection}{}
+\maketitle
 
 # はじめに
 
-あれこれ
+## いろはにほへと
+
+\jalipsum{iroha}[^1]
+
+[^1]: 脚注
+
+## 寿限無
+
+\jalipsum{jugemu}
+
+## 日本国憲法
+
+\jalipsum{preamble}
 
 \tableofcontents
 
 \mainmatter
-\let\thesection\thesectionorig
 
-# 起
-## かきくけこ
+# 吾輩は猫である
 
-あれこれ[^1]
-
-[^1]: 脚注
+\jalipsum{wagahai}
 
 # 承
 ## さしすせそ
@@ -33,13 +40,17 @@ author: HAMANO Tsukasa
 
 あれこれ
 
-# 結
-## なにぬねの
 
-あれこれ
+
+# レイアウト
+
+\clearpage
+\layout
+\clearpage
+\layout
 
 \backmatter
-\renewcommand{\thesection}{}
 
 # あとがき
 あれこれ
+
