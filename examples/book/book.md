@@ -1,6 +1,6 @@
 ---
 title: 本のテンプレート
-author: HAMANO Tsukasa
+author: 著者
 ---
 
 \frontmatter
@@ -8,49 +8,38 @@ author: HAMANO Tsukasa
 
 # はじめに
 
-## いろはにほへと
-
 \jalipsum{iroha}[^1]
 
 [^1]: 脚注
 
-## 寿限無
+## 対象読者 {-}
 
-\jalipsum{jugemu}
-
-## 日本国憲法
-
-\jalipsum{preamble}
+あんなひとこんなひと
 
 \tableofcontents
 
 \mainmatter
 
+# 日本国憲法
+
+\jalipsum{preamble}
+
 # 吾輩は猫である
 
 \jalipsum{wagahai}
-
-# 承
-## さしすせそ
-
-あれこれ
-
-# 転
-## たちつてと
-
-あれこれ
-
-
 
 # レイアウト
 
 \clearpage
 \layout
-\clearpage
-\layout
 
 \backmatter
 
-# あとがき
-あれこれ
+# あとがき {-}
 
+\jalipsum{jugemu}
+
+# 参考文献
+
+- AAA
+- BBB

@@ -1,7 +1,7 @@
-\documentclass[a4j
-$if(fontsize)$,$fontsize$$else$,11ptj$endif$
+\documentclass[a4j,papersize,
+$if(fontsize)$,$fontsize$$else$,12pt$endif$
 $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
-,uplatex]{jsbook}
+,uplatex]{bxjsbook}
 
 % set include path
 \makeatletter
@@ -9,8 +9,10 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
 \makeatother
 
 \usepackage{hamacro}
-\usepackage{bxpapersize}
+%\usepackage{bxpapersize}
+\usepackage{bxjalipsum}
 \usepackage{indentfirst}
+\usepackage{layout}
 
 % usepackage
 \hypersetup{
@@ -20,6 +22,10 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
   pdfsubject={$subject$},
   pdfkeywords={$keywords$},
 }
+
+% 綴じしろの余白調整
+\setlength{\oddsidemargin}{3truemm}
+\setlength{\evensidemargin}{-3truemm}
 
 %\usepackage{bookmark}
 %\bookmarksetup{numbered}
@@ -54,6 +60,27 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
   \@starttoc{toc}%
   \if@restonecol\twocolumn\fi
 }
+
+\renewcommand{\maketitle}[0]{
+  \thispagestyle{empty}
+  \begin{flushright}
+    {\sf\large 第1版}
+  \end{flushright}
+  \vspace{3truein}
+  \begin{center}
+    {\Huge\bf\sffamily\gtfamily\@title\par}
+  \end{center}
+  \vspace{\fill}
+  \begin{flushright}
+    {\Large\sffamily\gtfamily\@author\par}
+  \end{flushright}
+  \newpage
+  \null
+  \thispagestyle{empty}
+  \null
+  文責を書いたりする
+}
+
 \makeatother
 
 % title
@@ -63,7 +90,6 @@ $if(twocolumn)$,twocolumn$else$,onecolumn$endif$
 
 % document
 \begin{document}
-\maketitle
 
 $body$
 
