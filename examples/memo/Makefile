@@ -1,5 +1,6 @@
+BUILD_DIR=build
 LATEX=uplatex
-LATEX_OPT=-output-directory=tex
+LATEX_OPT=-output-directory=$(BUILD_DIR)
 PANDOC=pandoc
 PANDOC_OPT=-f markdown+yaml_metadata_block # --toc
 DVIPDFMX=dvipdfmx
@@ -13,12 +14,12 @@ PDF=$(NAME).pdf
 all: $(PDF)
 
 $(PDF): $(SRC) template.tex
-	mkdir -p tex
-	$(PANDOC) $(PANDOC_OPT) --template=template.tex -o tex/$(NAME).tex $<
-	sed -i -e 's/includegraphics{/includegraphics[width=\\columnwidth]{/g' tex/$(NAME).tex
-	$(LATEX) $(LATEX_OPT) tex/$(NAME).tex
-	$(LATEX) $(LATEX_OPT) tex/$(NAME).tex
-	$(DVIPDFMX) $(DVIPDFMX_OPT) -o $(PDF) tex/$(NAME).dvi
+	mkdir -p $(BUILD_DIR)
+	$(PANDOC) $(PANDOC_OPT) --template=template.tex -o $(BUILD_DIR)/$(NAME).tex $<
+	sed -i -e 's/includegraphics{/includegraphics[width=\\columnwidth]{/g' $(BUILD_DIR)/$(NAME).tex
+	$(LATEX) $(LATEX_OPT) $(BUILD_DIR)/$(NAME).tex
+	$(LATEX) $(LATEX_OPT) $(BUILD_DIR)/$(NAME).tex
+	$(DVIPDFMX) $(DVIPDFMX_OPT) -o $(PDF) $(BUILD_DIR)/$(NAME).dvi
 
 clean:
-	rm -rf tex *.pdf *.xbb
+	rm -rf $(BUILD_DIR) *.pdf *.xbb
