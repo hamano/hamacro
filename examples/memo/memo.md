@@ -128,6 +128,8 @@ pqrstuvwxyz{|}~
 # 画像
 ![代替テキスト](latex.eps)
 
+![50%縮小画像](latex.eps){width=50%}
+
 # テーブル
 
 | 果物    | 値段 | 個数 |
