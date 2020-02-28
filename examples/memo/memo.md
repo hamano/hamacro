@@ -40,6 +40,10 @@ Wednesday
  - ~~打ち消し線~~(ulem.styが必要)
  - ^上付き^
 
+# 絵文字
+
+☀☁☂☃
+
 # リンク
 
 <http://example.com/>
