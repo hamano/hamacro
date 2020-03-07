@@ -13,7 +13,7 @@ SRC=$(NAME).md
 PDF=$(NAME).pdf
 all: $(PDF)
 
-$(PDF): $(SRC) template.tex
+$(PDF): $(SRC) template.tex ../../hamacro.sty
 	mkdir -p $(BUILD_DIR)
 	$(PANDOC) $(PANDOC_OPT) --template=template.tex -o $(BUILD_DIR)/$(NAME).tex $<
 	sed -i -e 's/includegraphics{/includegraphics[width=\\columnwidth]{/g' $(BUILD_DIR)/$(NAME).tex
