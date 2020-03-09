@@ -105,15 +105,15 @@
 \colorlet{subcolor}{black}
 
 \DeclareOption{green}{
-  \colorlet{accentcolor}{green}
+  \colorlet{accentcolor}{darkgreen}
   \colorlet{subcolor}{darkgreen}
 }
 \DeclareOption{blue}{
-  \colorlet{accentcolor}{lightskyblue}
+  \colorlet{accentcolor}{midnightblue}
   \colorlet{subcolor}{midnightblue}
 }
 \DeclareOption{samuraiblue}{
-  \colorlet{accentcolor}{lightskyblue}
+  \colorlet{accentcolor}{samuraiblue}
   \colorlet{subcolor}{samuraiblue}
 }
 
@@ -297,11 +297,9 @@
   roundcorner=3pt}
 
 % style for quote
-%\usepackage{framed}
-\usepackage{anyfontsize}
 \newcommand{\bigquotemark}{
-  {\fontsize{3em}{3em}\selectfont \color{accentcolor} \textbf{``}}
-  \vskip -2.3em
+  {\Huge \color{accentcolor} \textbf{``}}
+  \vskip -2em
   \hskip 1.5zw
 }
 \renewenvironment{quote}{
