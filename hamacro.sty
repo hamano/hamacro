@@ -8,7 +8,7 @@
 %% 
 %% This is a generated file.
 %% 
-%% Copyright (C) 2004-2015 HAMANO Tsukasa <hamano@cuspy.org>
+%% Copyright (C) 2004-2020 HAMANO Tsukasa <hamano@cuspy.org>
 %% 
 %% This file is released under the MIT License.
 %% 
@@ -82,11 +82,11 @@
   \colorlet{subcolor}{darkgreen}
 }
 \DeclareOption{blue}{
-  \colorlet{accentcolor}{lightskyblue}
+  \colorlet{accentcolor}{midnightblue}
   \colorlet{subcolor}{midnightblue}
 }
 \DeclareOption{samuraiblue}{
-  \colorlet{accentcolor}{lightskyblue}
+  \colorlet{accentcolor}{samuraiblue}
   \colorlet{subcolor}{samuraiblue}
 }
 
@@ -253,10 +253,9 @@
   backgroundcolor=framebg,
   roundcorner=3pt}
 
-\usepackage{anyfontsize}
 \newcommand{\bigquotemark}{
-  {\fontsize{3em}{3em}\selectfont \color{accentcolor} \textbf{``}}
-  \vskip -2.3em
+  {\Huge \color{accentcolor} \textbf{``}}
+  \vskip -2em
   \hskip 1.5zw
 }
 \renewenvironment{quote}{
