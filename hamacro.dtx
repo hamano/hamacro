@@ -285,8 +285,20 @@
 %\let\emph\bouemph
 
 % tableofcontentsをサンセリフに統一
-\let\origtableofcontents\tableofcontents
-\renewcommand{\tableofcontents}{\textsf\origtableofcontents}
+%\let\origtableofcontents\tableofcontents
+%\renewcommand{\tableofcontents}{\textsf\origtableofcontents}
+% ↑だけではページ番号がserifなのでdottedtoclineを書き換える
+\def\@dottedtocline#1#2#3#4#5{\ifnum #1>\c@tocdepth \else
+  \vskip \z@ \@plus.2\jsc@mpt
+  {\leftskip #2\relax \rightskip \@tocrmarg \parfillskip -\rightskip
+    \parindent #2\relax\@afterindenttrue
+   \interlinepenalty\@M
+   \leavevmode
+   \@lnumwidth #3\relax
+   \advance\leftskip \@lnumwidth \null\nobreak\hskip -\leftskip
+    \sffamily{#4}\nobreak
+    \jsTocLine \nobreak\hb@xt@\@pnumwidth{%
+      \hfil \normalcolor #5}\par}\fi}
 
 % setting for mdframed
 \usepackage[framemethod=TikZ]{mdframed}
