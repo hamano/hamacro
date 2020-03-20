@@ -8,7 +8,7 @@
 %% 
 %% This is a generated file.
 %% 
-%% Copyright (C) 2004-2020 HAMANO Tsukasa <hamano@cuspy.org>
+%% Copyright (C) 2004-2015 HAMANO Tsukasa <hamano@cuspy.org>
 %% 
 %% This file is released under the MIT License.
 %% 
@@ -78,7 +78,7 @@
 \colorlet{subcolor}{black}
 
 \DeclareOption{green}{
-  \colorlet{accentcolor}{green}
+  \colorlet{accentcolor}{darkgreen}
   \colorlet{subcolor}{darkgreen}
 }
 \DeclareOption{blue}{
@@ -243,8 +243,17 @@
            {\origemph{\bou{#1}}}
 
 
-\let\origtableofcontents\tableofcontents
-\renewcommand{\tableofcontents}{\textsf\origtableofcontents}
+\def\@dottedtocline#1#2#3#4#5{\ifnum #1>\c@tocdepth \else
+  \vskip \z@ \@plus.2\jsc@mpt
+  {\leftskip #2\relax \rightskip \@tocrmarg \parfillskip -\rightskip
+    \parindent #2\relax\@afterindenttrue
+   \interlinepenalty\@M
+   \leavevmode
+   \@lnumwidth #3\relax
+   \advance\leftskip \@lnumwidth \null\nobreak\hskip -\leftskip
+    \sffamily{#4}\nobreak
+    \jsTocLine \nobreak\hb@xt@\@pnumwidth{%
+      \hfil \normalcolor #5}\par}\fi}
 
 \usepackage[framemethod=TikZ]{mdframed}
 \mdfsetup{
