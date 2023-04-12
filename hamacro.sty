@@ -67,7 +67,6 @@
 \usepackage{ctable}
 \usepackage{longtable}
 \usepackage{ulem}
-\usepackage{soul}
 
 \colorlet{sectionbg}{gray90}
 \colorlet{framerule}{dimgray}
@@ -241,6 +240,9 @@
 
 \newcommand{\bouemph}[1]
            {\origemph{\bou{#1}}}
+
+\newcommand{\st}[1]
+           {\sout{#1}}
 
 
 \def\@dottedtocline#1#2#3#4#5{\ifnum #1>\c@tocdepth \else

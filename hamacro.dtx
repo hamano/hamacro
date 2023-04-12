@@ -93,7 +93,6 @@
 \usepackage{ctable}
 \usepackage{longtable}
 \usepackage{ulem}
-\usepackage{soul}
 
 % カラーテーマ設定
 \colorlet{sectionbg}{gray90}
@@ -281,6 +280,10 @@
 
 \newcommand{\bouemph}[1]
            {\origemph{\bou{#1}}}
+
+% pandoc3が出力する\st命令を\soutに
+\newcommand{\st}[1]
+           {\sout{#1}}
 
 %\let\emph\bouemph
 
