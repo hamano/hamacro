@@ -13,7 +13,7 @@
 %</package>
 %
 %<*driver>
-\documentclass[a4j,11ptj,uplatex]{jsarticle}
+\documentclass[a4j,11ptj,uplatex]{bxjsarticle}
 \usepackage{doc}
 \usepackage[blue]{hamacro}
 \usepackage{indentfirst}
@@ -418,7 +418,6 @@
 % style for listings
 \usepackage{upquote}
 \usepackage{listings}
-%\usepackage{jlisting}
 
 % ハイフンをU+002D HYPHEN-MINUSのままで表示
 %\makeatletter
@@ -443,14 +442,13 @@
 \mdfsetup{
   linewidth=1truept,
   linecolor=gray,
-  innerleftmargin=0.5zw,
-  innerrightmargin=0.5zw,
+  innerleftmargin=0.4zw,
+  innerrightmargin=0.4zw,
   backgroundcolor=framebg
 }
 
 \BeforeBeginEnvironment{lstlisting}{
   \begin{mdframed}
-  \vskip -1em
 }
 
 \AfterEndEnvironment{lstlisting}{
