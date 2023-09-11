@@ -14,6 +14,7 @@
 %
 %<*driver>
 \documentclass[a4j,11ptj,uplatex]{bxjsarticle}
+%\documentclass[a4j,11ptj,lualatex]{bxjsarticle}
 \usepackage{doc}
 \usepackage[blue]{hamacro}
 \usepackage{indentfirst}
@@ -34,6 +35,8 @@
 \end{document}
 %</driver>
 
+\usepackage{iftex}
+\ifuptex
 % fontencを使うと何故かビットマップフォントが埋め込まれるので必ず欧文
 % フォントを指定すること
 \usepackage[T1]{fontenc}
@@ -46,6 +49,7 @@
 \usepackage{inconsolata} % only ttdefault
 \usepackage[deluxe]{otf}
 \usepackage[dvipdfmx]{graphicx}
+\fi
 
 % 色定義
 \usepackage[dvipdfmx]{color}
@@ -74,7 +78,15 @@
 \definecolor{darkgreen}{HTML}{006400}
 \definecolor{samuraiblue}{HTML}{1D327D}
 
+\ifuptex
 \usepackage[dvipdfm]{hyperref}
+% しおりの文字化け対策
+\usepackage{pxjahyper}
+\fi
+\ifluatex
+\usepackage{hyperref}
+\fi
+
 \hypersetup{
   setpagesize=false,
   bookmarksnumbered=true,
@@ -84,9 +96,6 @@
   filecolor=linkcolor,
   urlcolor=linkcolor
 }
-
-% しおりの文字化け対策
-\usepackage{pxjahyper}
 
 % その他パッケージ
 \usepackage{ulem}
@@ -98,6 +107,7 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{calc}
+\usepackage{tcolorbox}
 
 % カラーテーマ設定
 \colorlet{sectionbg}{gray90}
@@ -130,6 +140,26 @@
   \setlength{\textwidth}{0.9\paperwidth}
   \setlength{\topmargin}{-1truein}
   \setlength{\textheight}{0.9\paperheight}
+}
+
+% pandocがインラインコードで出力するtextttを修飾
+\DeclareOption{fancyinlinecode}{
+    \definecolor{framecolor}{HTML}{ffcccb}
+    \definecolor{tcolor}{HTML}{c7254e}
+    \let\oldtexttt\texttt
+    \renewcommand{\texttt}[1]{
+        \tcbox[
+            on line,
+            boxsep=0pt,
+            left=1pt,
+            right=1pt,
+            top=1pt,
+            bottom=1pt,
+            colframe=framecolor,
+            boxrule=0.5pt]{
+            \textcolor{tcolor}{\oldtexttt{#1}}
+        }
+    }
 }
 
 \ProcessOptions

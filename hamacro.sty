@@ -15,6 +15,8 @@
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesPackage{hamacro}[2004/11/05 hamano]
 
+\usepackage{iftex}
+\ifuptex
 \usepackage[T1]{fontenc}
 \usepackage{newtxmath}
 \usepackage{tgtermes}
@@ -23,6 +25,7 @@
 \usepackage{inconsolata} % only ttdefault
 \usepackage[deluxe]{otf}
 \usepackage[dvipdfmx]{graphicx}
+\fi
 
 \usepackage[dvipdfmx]{color}
 \usepackage[dvipdfmx]{xcolor}
@@ -50,7 +53,14 @@
 \definecolor{darkgreen}{HTML}{006400}
 \definecolor{samuraiblue}{HTML}{1D327D}
 
+\ifuptex
 \usepackage[dvipdfm]{hyperref}
+\usepackage{pxjahyper}
+\fi
+\ifluatex
+\usepackage{hyperref}
+\fi
+
 \hypersetup{
   setpagesize=false,
   bookmarksnumbered=true,
@@ -61,8 +71,6 @@
   urlcolor=linkcolor
 }
 
-\usepackage{pxjahyper}
-
 \usepackage{ulem}
 \usepackage{here}
 \usepackage{ctable}
@@ -71,6 +79,7 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{calc}
+\usepackage{tcolorbox}
 
 \colorlet{sectionbg}{gray90}
 \colorlet{framerule}{dimgray}
@@ -101,6 +110,25 @@
   \setlength{\textwidth}{0.9\paperwidth}
   \setlength{\topmargin}{-1truein}
   \setlength{\textheight}{0.9\paperheight}
+}
+
+\DeclareOption{fancyinlinecode}{
+    \definecolor{framecolor}{HTML}{ffcccb}
+    \definecolor{tcolor}{HTML}{c7254e}
+    \let\oldtexttt\texttt
+    \renewcommand{\texttt}[1]{
+        \tcbox[
+            on line,
+            boxsep=0pt,
+            left=1pt,
+            right=1pt,
+            top=1pt,
+            bottom=1pt,
+            colframe=framecolor,
+            boxrule=0.5pt]{
+            \textcolor{tcolor}{\oldtexttt{#1}}
+        }
+    }
 }
 
 \ProcessOptions
@@ -372,14 +400,13 @@
 \mdfsetup{
   linewidth=1truept,
   linecolor=gray,
-  innerleftmargin=0.5zw,
-  innerrightmargin=0.5zw,
+  innerleftmargin=0.4zw,
+  innerrightmargin=0.4zw,
   backgroundcolor=framebg
 }
 
 \BeforeBeginEnvironment{lstlisting}{
   \begin{mdframed}
-  \vskip -1em
 }
 
 \AfterEndEnvironment{lstlisting}{
