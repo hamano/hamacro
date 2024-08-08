@@ -147,19 +147,21 @@
     \definecolor{framecolor}{HTML}{ffcccb}
     \definecolor{tcolor}{HTML}{c7254e}
     \let\oldtexttt\texttt
-    \renewcommand{\texttt}[1]{
+    \DeclareRobustCommand{\fancytexttt}[1]{
         \tcbox[
             on line,
             boxsep=0pt,
             left=1pt,
             right=1pt,
-            top=1pt,
-            bottom=1pt,
+            bottom=2pt,
+            height=0.85\baselineskip,
+            valign=bottom,
             colframe=framecolor,
             boxrule=0.5pt]{
             \textcolor{tcolor}{\oldtexttt{#1}}
         }
     }
+    \renewcommand{\texttt}[1]{\fancytexttt{#1}}
 }
 
 \ProcessOptions
