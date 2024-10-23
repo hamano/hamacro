@@ -74,6 +74,7 @@
 \usepackage{ulem}
 \usepackage{here}
 \usepackage{ctable}
+\usepackage{seqsplit}
 
 \usepackage{longtable}
 \usepackage{booktabs}
@@ -131,6 +132,13 @@
         }
     }
     \renewcommand{\texttt}[1]{\fancytexttt{#1}}
+}
+
+\DeclareOption{wrapinlinecode}{
+    \definecolor{framecolor}{HTML}{ffcccb}
+    \definecolor{tcolor}{HTML}{c7254e}
+    \let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{\oldtexttt{\textcolor{tcolor}{\seqsplit{#1}}}}
 }
 
 \ProcessOptions
@@ -351,6 +359,7 @@
   \begin{mdframed}[innerleftmargin=1ex]
   \tt\fontsize{11truept}{1.2em}
 }{\end{mdframed}}
+\usepackage{fvextra}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
